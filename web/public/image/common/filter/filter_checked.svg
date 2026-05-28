@@ -1,0 +1,13 @@
+<svg id="ICONS" xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g id="Checked">
+    <path id="Прямоугольник_2_копия_4" data-name="Прямоугольник 2 копия 4" class="cls-1" d="M162,172V154h53v18H162Zm0-47h53v18H162V125Zm0-29h53v18H162V96ZM83,90l32,14,60-40-60,74ZM53,85v73h72V143.659c5.89-7.2,15.1-18.438,23-27.981V161a20,20,0,0,1-20,20H49a20,20,0,0,1-20-20V81A20,20,0,0,1,49,61h79a19.925,19.925,0,0,1,13.961,5.693L114.5,85H53Z"/>
+  </g>
+</svg>

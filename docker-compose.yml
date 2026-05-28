@@ -1,0 +1,13 @@
+services:
+  directus:
+    image: directus/directus:11.17.4
+    container_name: undecember-directus
+    ports:
+      - "8055:8055"
+    env_file:
+      - ./directus/.env
+    volumes:
+      - ./directus/database:/directus/database
+      - ./directus/uploads:/directus/uploads
+      - ./directus/extensions:/directus/extensions
+    restart: unless-stopped

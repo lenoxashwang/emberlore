@@ -1,0 +1,186 @@
+{
+  "project": "undecember-cms",
+  "strategy": {
+    "data_model": "normalized-with-source-keys",
+    "manual_entry": true,
+    "bulk_import": true,
+    "frontend_mode": "next-app-router-consuming-directus-rest"
+  },
+  "collections": [
+    {
+      "name": "site_settings",
+      "singleton": true,
+      "note": "Global website settings.",
+      "fields": [
+        { "name": "site_name", "type": "string", "required": true },
+        { "name": "default_locale", "type": "string", "required": true, "default": "en" },
+        { "name": "logo_text", "type": "string" },
+        { "name": "copyright_text", "type": "string" },
+        { "name": "reference_url", "type": "string" }
+      ]
+    },
+    {
+      "name": "navigation_links",
+      "note": "Left menu and top-level navigation links.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "locale", "type": "string", "required": true, "default": "en" },
+        { "name": "group_name", "type": "string" },
+        { "name": "label", "type": "string", "required": true },
+        { "name": "href", "type": "string", "required": true },
+        { "name": "open_in_new_tab", "type": "boolean", "default": false },
+        { "name": "sort_order", "type": "integer", "default": 1 }
+      ]
+    },
+    {
+      "name": "download_links",
+      "note": "Homepage platform download links.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "locale", "type": "string", "required": true, "default": "en" },
+        { "name": "platform", "type": "string", "required": true },
+        { "name": "label", "type": "string", "required": true },
+        { "name": "href", "type": "string", "required": true },
+        { "name": "icon_url", "type": "string" },
+        { "name": "sort_order", "type": "integer", "default": 1 }
+      ]
+    },
+    {
+      "name": "home_slides",
+      "note": "Homepage hero slider cards.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "locale", "type": "string", "required": true, "default": "en" },
+        { "name": "title", "type": "string", "required": true },
+        { "name": "subtitle", "type": "text" },
+        { "name": "image_url", "type": "string" },
+        { "name": "background_css", "type": "text" },
+        { "name": "href", "type": "string", "required": true },
+        { "name": "sort_order", "type": "integer", "default": 1 }
+      ]
+    },
+    {
+      "name": "home_featured_cards",
+      "note": "Homepage wide and grid cards.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "locale", "type": "string", "required": true, "default": "en" },
+        { "name": "card_size", "type": "string", "required": true },
+        { "name": "title", "type": "string", "required": true },
+        { "name": "subtitle", "type": "text" },
+        { "name": "image_url", "type": "string" },
+        { "name": "background_css", "type": "text" },
+        { "name": "href", "type": "string", "required": true },
+        { "name": "sort_order", "type": "integer", "default": 1 }
+      ]
+    },
+    {
+      "name": "content_sections",
+      "note": "Top-level content groups like runes, essences, materials and coins.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "locale", "type": "string", "required": true, "default": "en" },
+        { "name": "slug", "type": "string", "required": true },
+        { "name": "title", "type": "string", "required": true },
+        { "name": "description", "type": "text" },
+        { "name": "hero_image_url", "type": "string" },
+        { "name": "icon_image_url", "type": "string" },
+        { "name": "theme_token", "type": "string" },
+        { "name": "sort_order", "type": "integer", "default": 1 },
+        { "name": "status", "type": "string", "default": "published" },
+        { "name": "source_path", "type": "string" },
+        { "name": "source_url", "type": "string" }
+      ]
+    },
+    {
+      "name": "content_entries",
+      "note": "Generic detail items for runes, coins, essences, potions, materials and other sections.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "locale", "type": "string", "required": true, "default": "en" },
+        { "name": "section_slug", "type": "string", "required": true },
+        { "name": "entry_type", "type": "string" },
+        { "name": "list_stat", "type": "string" },
+        { "name": "list_props", "type": "text" },
+        { "name": "slug", "type": "string", "required": true },
+        { "name": "title", "type": "string", "required": true },
+        { "name": "subtitle", "type": "text" },
+        { "name": "description", "type": "text" },
+        { "name": "image_url", "type": "string" },
+        { "name": "video_url", "type": "string" },
+        { "name": "rarity", "type": "string" },
+        { "name": "acquisition_method", "type": "string" },
+        { "name": "weapon_requirement", "type": "string" },
+        { "name": "sort_order", "type": "integer", "default": 1 },
+        { "name": "status", "type": "string", "default": "published" },
+        { "name": "seo_title", "type": "string" },
+        { "name": "seo_description", "type": "text" },
+        { "name": "source_path", "type": "string" },
+        { "name": "source_url", "type": "string" }
+      ]
+    },
+    {
+      "name": "entry_tags",
+      "note": "Tag badges rendered on detail pages.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "entry_source_key", "type": "string", "required": true },
+        { "name": "label", "type": "string", "required": true },
+        { "name": "sort_order", "type": "integer", "default": 1 }
+      ]
+    },
+    {
+      "name": "entry_properties",
+      "note": "Small fact pairs like Min. rarity / How to get / Weapon.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "entry_source_key", "type": "string", "required": true },
+        { "name": "label", "type": "string", "required": true },
+        { "name": "value", "type": "text", "required": true },
+        { "name": "sort_order", "type": "integer", "default": 1 }
+      ]
+    },
+    {
+      "name": "entry_stat_blocks",
+      "note": "Blocks like Rune Level 1 / Rune Level 45 / Rune Grade.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "entry_source_key", "type": "string", "required": true },
+        { "name": "title", "type": "string", "required": true },
+        { "name": "variant", "type": "string" },
+        { "name": "sort_order", "type": "integer", "default": 1 }
+      ]
+    },
+    {
+      "name": "entry_stat_lines",
+      "note": "Individual lines inside each stat block.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "block_source_key", "type": "string", "required": true },
+        { "name": "content", "type": "text", "required": true },
+        { "name": "sort_order", "type": "integer", "default": 1 }
+      ]
+    },
+    {
+      "name": "entry_awakening_groups",
+      "note": "Awakening groups like Source / Origin / Verity.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "entry_source_key", "type": "string", "required": true },
+        { "name": "code", "type": "string", "required": true },
+        { "name": "title", "type": "string", "required": true },
+        { "name": "sort_order", "type": "integer", "default": 1 }
+      ]
+    },
+    {
+      "name": "entry_awakening_lines",
+      "note": "Individual lines inside each awakening group.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "awakening_source_key", "type": "string", "required": true },
+        { "name": "content", "type": "text", "required": true },
+        { "name": "sort_order", "type": "integer", "default": 1 }
+      ]
+    }
+  ]
+}

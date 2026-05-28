@@ -1,0 +1,27 @@
+.DS_Store
+*.log
+.logs/
+
+# Local environment files and secrets
+.env
+.env.*
+!.env.example
+directus/.env
+web/.env.local
+
+# Runtime databases, uploads and generated state
+backend/data/
+directus/database/
+directus/uploads/
+directus/extensions/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# Frontend dependencies and build output
+web/.next/
+web/node_modules/
+
+# Optional reference-site mirror. The app runtime uses Directus seed data and web/public/image.
+frontend/.mirror-cache/
+frontend/public/
