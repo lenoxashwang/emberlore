@@ -1,6 +1,7 @@
 .DS_Store
 *.log
 .logs/
+.playwright-cli/
 
 # Local environment files and secrets
 .env
@@ -14,6 +15,15 @@ backend/data/
 directus/database/
 directus/uploads/
 directus/extensions/
+!directus/extensions/
+!directus/extensions/directus-hook-emberlore-translation-source-key/
+!directus/extensions/directus-hook-emberlore-translation-source-key/package.json
+!directus/extensions/directus-hook-emberlore-translation-source-key/dist/
+!directus/extensions/directus-hook-emberlore-translation-source-key/dist/index.js
+!directus/extensions/directus-interface-emberlore-translation-locale-select/
+!directus/extensions/directus-interface-emberlore-translation-locale-select/package.json
+!directus/extensions/directus-interface-emberlore-translation-locale-select/dist/
+!directus/extensions/directus-interface-emberlore-translation-locale-select/dist/index.js
 *.sqlite
 *.sqlite-shm
 *.sqlite-wal

@@ -1,17 +1,21 @@
 import { notFound } from 'next/navigation';
 import SectionSearch from '@/components/section-search';
-import { getEntries, getSection } from '@/lib/cms';
+import { getEntries, getSection, getTerminologyMap } from '@/lib/cms';
+import { getLocaleMessages, resolveLocale } from '@/lib/i18n';
 
 export default async function SectionPage({
   params,
 }: {
   params: Promise<{ locale: string; section: string }>;
 }) {
-  const { locale, section } = await params;
-  const [sectionRecord, entries] = await Promise.all([
+  const { locale: rawLocale, section } = await params;
+  const locale = resolveLocale(rawLocale);
+  const messages = getLocaleMessages(locale);
+  const [sectionRecord, terminologyMap] = await Promise.all([
     getSection(locale, section),
-    getEntries(locale, section),
+    getTerminologyMap(locale),
   ]);
+  const entries = await getEntries(locale, section, terminologyMap);
 
   if (!sectionRecord) {
     notFound();
@@ -26,13 +30,14 @@ export default async function SectionPage({
       </header>
 
       {entries.length === 0 ? (
-        <div className="empty-state">这个栏目里还没有内容，请先在 Directus 中新增数据。</div>
+        <div className="empty-state">{messages.sectionEmptyState}</div>
       ) : (
         <SectionSearch
           entries={entries}
           locale={locale}
           section={section}
           sectionTitle={sectionRecord.title}
+          terminologyMap={terminologyMap}
         />
       )}
     </div>

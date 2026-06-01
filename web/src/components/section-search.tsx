@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { startTransition, useDeferredValue, useEffect, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import type { ContentEntry, EntryProperty } from '@/lib/cms';
+import { formatMessage, getLocaleMessages, resolveLocale } from '@/lib/i18n';
+import { localizeTerminology, type TerminologyMap } from '@/lib/terminology';
 
 type FilterKey = 'sort' | 'stat' | 'get' | 'type' | 'shop' | 'rarity' | 'weapon' | 'tags' | 'req' | 'mode';
 
@@ -21,11 +23,41 @@ type FilterGroup = {
   modeToggle?: boolean;
 };
 
+const UNIQUE_GENERIC_TAG_KEYS = new Set(['level', 'stat', '等级', '属性'].map(normalize));
+const COMPOUND_CARD_PROP_TERMS = [
+  'Act 1',
+  'Act 2',
+  'Act 3',
+  'Act 4',
+  'Act 5',
+  'Act 6-10',
+  'Act 11-12',
+  'Auction house',
+  'Black Market',
+  'Buy for cash',
+  'Buy for diamond',
+  'Chaos Dungeon',
+  'Content reward',
+  'Descent Raid',
+  'Event reward',
+  'Hardcore Mode',
+  'Item sale',
+  'Paid Shop',
+  'Randome Bounty',
+  'Ranking reward',
+  'Season Content',
+  'Unique Dungeon',
+].map((term) => ({
+  value: term,
+  parts: term.split(/\s+/),
+}));
+
 type SectionSearchProps = {
   locale: string;
   section: string;
   sectionTitle: string;
   entries: ContentEntry[];
+  terminologyMap?: TerminologyMap;
 };
 
 const rarityOptions: FilterOption[] = [
@@ -35,7 +67,7 @@ const rarityOptions: FilterOption[] = [
   { value: 'Unique', label: 'Unique' },
   { value: 'Legendary', label: 'Legendary' },
   { value: 'Holy', label: 'Holy' },
-  { value: 'Ancient', label: 'Holy', aliases: ['Ancient'] },
+  { value: 'Ancient', label: 'Ancient' },
 ];
 
 const runeGroups: FilterGroup[] = [
@@ -151,7 +183,7 @@ const statRequirementOptions: FilterOption[] = [
 ];
 
 function normalize(value: string) {
-  return value.toLowerCase().replace(/[^a-z0-9]+/g, '');
+  return value.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, '');
 }
 
 function uniqueOptions(values: string[]) {
@@ -173,11 +205,24 @@ function uniqueOptions(values: string[]) {
 }
 
 function propertyValue(properties: EntryProperty[] | undefined, label: string) {
-  return properties?.find((property) => property.label === label)?.value || '';
+  return (
+    properties?.find(
+      (property) => property.label === label || property.base_label === label,
+    )?.value || ''
+  );
+}
+
+function propertyBaseValue(properties: EntryProperty[] | undefined, label: string) {
+  const property = properties?.find(
+    (item) => item.label === label || item.base_label === label,
+  );
+  return property?.base_value || property?.value || '';
 }
 
 function listProps(entry: ContentEntry) {
-  return (entry.list_props || '').split(/\s+/).filter(Boolean);
+  return [entry.list_props || '', entry.base_list_props || '']
+    .flatMap((value) => value.split(/\s+/))
+    .filter(Boolean);
 }
 
 function optionTerms(option: FilterOption) {
@@ -186,7 +231,15 @@ function optionTerms(option: FilterOption) {
 
 function textMatchesOption(text: string, option: FilterOption) {
   const normalizedText = normalize(text);
-  return optionTerms(option).some((term) => normalizedText.includes(normalize(term)));
+  return optionTerms(option).some((term) => {
+    const normalizedTerm = normalize(term);
+
+    if (!normalizedTerm) {
+      return text.toLowerCase().includes(term.toLowerCase());
+    }
+
+    return normalizedText.includes(normalizedTerm);
+  });
 }
 
 function entryMatchesName(entry: ContentEntry, query: string) {
@@ -200,10 +253,24 @@ function entryMatchesName(entry: ContentEntry, query: string) {
     return true;
   }
 
-  const searchableText = [entry.title, entry.slug, entry.subtitle || ''].join(' ').toLowerCase();
+  const searchableText = [
+    entry.title,
+    entry.base_title || '',
+    entry.slug,
+    entry.subtitle || '',
+    entry.base_subtitle || '',
+  ].join(' ').toLowerCase();
   const normalizedText = normalize(searchableText);
 
-  return terms.every((term) => searchableText.includes(term) || normalizedText.includes(normalize(term)));
+  return terms.every((term) => {
+    const normalizedTerm = normalize(term);
+
+    if (!normalizedTerm) {
+      return searchableText.includes(term);
+    }
+
+    return searchableText.includes(term) || normalizedText.includes(normalizedTerm);
+  });
 }
 
 function hasFilterValue(searchParams: URLSearchParams, key: FilterKey, value: string) {
@@ -226,43 +293,55 @@ function entryMatchesSelection(entry: ContentEntry, key: FilterKey, selected: st
 
   if (key === 'type') {
     const values = section === 'uniques'
-      ? [propertyValue(entry.properties, 'Type')]
+      ? [propertyValue(entry.properties, 'Type'), propertyBaseValue(entry.properties, 'Type')]
       : [entry.entry_type || ''];
 
     return options.some((option) => values.some((value) => value === option.value || value === option.label || textMatchesOption(value, option)));
   }
 
   if (key === 'rarity') {
-    return options.some((option) => entry.rarity === option.value || entry.rarity === option.label);
+    return options.some(
+      (option) =>
+        entry.rarity === option.value
+        || entry.rarity === option.label
+        || entry.base_rarity === option.value
+        || entry.base_rarity === option.label,
+    );
   }
 
   if (key === 'stat') {
-    const values = [entry.list_stat || '', ...listProps(entry)];
+    const values = [entry.list_stat || '', entry.base_list_stat || '', ...listProps(entry)];
     return options.some((option) => values.some((value) => textMatchesOption(value, option)));
   }
 
   if (key === 'get') {
-    const values = [entry.acquisition_method || '', ...listProps(entry)];
+    const values = [entry.acquisition_method || '', entry.base_acquisition_method || '', ...listProps(entry)];
     return options.some((option) => values.some((value) => textMatchesOption(value, option)));
   }
 
   if (key === 'shop') {
-    const value = propertyValue(entry.properties, 'To buy in');
-    return options.some((option) => textMatchesOption(value, option));
+    const values = [propertyValue(entry.properties, 'To buy in'), propertyBaseValue(entry.properties, 'To buy in')];
+    return options.some((option) => values.some((value) => textMatchesOption(value, option)));
   }
 
   if (key === 'weapon') {
     const value = entry.weapon_requirement || propertyValue(entry.properties, 'Weapon');
+    const baseValue = entry.base_weapon_requirement || propertyBaseValue(entry.properties, 'Weapon');
+    const values = [value, baseValue].filter(Boolean);
 
-    if (normalize(value).includes('allweapons')) {
+    if (values.some((item) => normalize(item).includes('allweapons'))) {
       return true;
     }
 
-    return options.some((option) => textMatchesOption(value, option));
+    return options.some((option) => values.some((item) => textMatchesOption(item, option)));
   }
 
   if (key === 'req') {
-    const requirementValues = [propertyValue(entry.properties, 'Requires'), ...listProps(entry)];
+    const requirementValues = [
+      propertyValue(entry.properties, 'Requires'),
+      propertyBaseValue(entry.properties, 'Requires'),
+      ...listProps(entry),
+    ];
     const reqMode = selected.includes('AsAnd') ? 'and' : 'or';
     const reqOptions = options.filter((option) => option.value !== 'AsAnd');
 
@@ -280,7 +359,7 @@ function entryMatchesSelection(entry: ContentEntry, key: FilterKey, selected: st
   }
 
   if (key === 'tags') {
-    const entryTags = (entry.tags || []).map(normalize);
+    const entryTags = [...(entry.tags || []), ...(entry.base_tags || [])].map(normalize);
     const tagMode = selected.includes('AsAnd') ? 'and' : 'or';
     const tagValues = selected.filter((value) => value !== 'AsAnd').map(normalize);
 
@@ -311,14 +390,19 @@ function buildGroups(section: string, entries: ContentEntry[]) {
   }
 
   if (section === 'uniques') {
-    const tagOptions = uniqueOptions(entries.flatMap((entry) => entry.tags || []));
+    const tagOptions = uniqueOptions(entries.flatMap((entry) => [...(entry.tags || []), ...(entry.base_tags || [])]))
+      .filter((option) => !UNIQUE_GENERIC_TAG_KEYS.has(normalize(option.value)));
     const groups: FilterGroup[] = [
       {
         key: 'type',
         title: 'Equipment type',
         area: 'main',
         options: uniqueEquipmentOptions.filter((option) =>
-          entries.some((entry) => textMatchesOption(propertyValue(entry.properties, 'Type'), option)),
+          entries.some((entry) =>
+            [propertyValue(entry.properties, 'Type'), propertyBaseValue(entry.properties, 'Type')].some((value) =>
+              textMatchesOption(value, option),
+            ),
+          ),
         ),
       },
       {
@@ -334,7 +418,7 @@ function buildGroups(section: string, entries: ContentEntry[]) {
         modeToggle: true,
         options: statRequirementOptions.filter((option) =>
           entries.some((entry) =>
-            [propertyValue(entry.properties, 'Requires'), ...listProps(entry)].some((value) =>
+            [propertyValue(entry.properties, 'Requires'), propertyBaseValue(entry.properties, 'Requires'), ...listProps(entry)].some((value) =>
               textMatchesOption(value, option),
             ),
           ),
@@ -363,7 +447,13 @@ function buildGroups(section: string, entries: ContentEntry[]) {
 
   const groups: FilterGroup[] = [];
   const rarities = rarityOptions.filter((option) =>
-    entries.some((entry) => entry.rarity === option.value || entry.rarity === option.label),
+    entries.some(
+      (entry) =>
+        entry.rarity === option.value
+        || entry.rarity === option.label
+        || entry.base_rarity === option.value
+        || entry.base_rarity === option.label,
+    ),
   );
   const types = uniqueOptions(entries.map((entry) => entry.entry_type || ''));
 
@@ -403,16 +493,151 @@ function sortEntries(entries: ContentEntry[], enabled: boolean) {
   return [...entries].sort((a, b) => a.title.localeCompare(b.title));
 }
 
-function displayProps(entry: ContentEntry) {
-  return [
-    entry.list_stat,
-    entry.rarity,
-    entry.entry_type,
-    entry.acquisition_method,
-  ].filter(Boolean).slice(0, 4);
+function dedupePropValues(values: Array<string | undefined>) {
+  const seen = new Set<string>();
+
+  return values.filter((value) => {
+    if (!value) {
+      return false;
+    }
+
+    const normalizedValue = normalize(value);
+
+    if (!normalizedValue || seen.has(normalizedValue)) {
+      return false;
+    }
+
+    seen.add(normalizedValue);
+    return true;
+  });
 }
 
-export default function SectionSearch({ locale, section, sectionTitle, entries }: SectionSearchProps) {
+function splitCardPropString(value: string) {
+  const tokens = value.split(/\s+/).filter(Boolean);
+  const props: string[] = [];
+
+  for (let index = 0; index < tokens.length; index += 1) {
+    const matched = COMPOUND_CARD_PROP_TERMS.find((term) =>
+      term.parts.every((part, partIndex) => tokens[index + partIndex] === part),
+    );
+
+    if (matched) {
+      props.push(matched.value);
+      index += matched.parts.length - 1;
+      continue;
+    }
+
+    props.push(tokens[index]);
+  }
+
+  return props;
+}
+
+function uniqueEntryProps(entry: ContentEntry) {
+  const source = entry.list_props || entry.base_list_props || '';
+  const tokens = source.split(/\s+/).filter(Boolean);
+  const props: string[] = [];
+
+  for (let index = 0; index < tokens.length; index += 1) {
+    const current = tokens[index];
+    const next = tokens[index + 1];
+
+    if (/^tier$/i.test(current) && next) {
+      props.push(`${current} ${next}`);
+      index += 1;
+      continue;
+    }
+
+    props.push(current);
+  }
+
+  return dedupePropValues(props).slice(0, 3);
+}
+
+function displayProps(entry: ContentEntry, section: string) {
+  if (section === 'uniques') {
+    return uniqueEntryProps(entry);
+  }
+
+  const listProps = splitCardPropString(entry.list_props || entry.base_list_props || '');
+  const acquisitionProps = splitCardPropString(entry.acquisition_method || entry.base_acquisition_method || '');
+
+  return dedupePropValues([
+    entry.list_stat,
+    entry.entry_type,
+    entry.rarity,
+    ...listProps,
+    ...acquisitionProps,
+  ]).slice(0, 6);
+}
+
+function rarityDataValue(entry: ContentEntry) {
+  const candidates = [entry.rarity, entry.base_rarity].filter(Boolean);
+
+  for (const candidate of candidates) {
+    const normalized = normalize(candidate || '');
+
+    switch (normalized) {
+      case 'normal':
+      case '一般':
+      case '普通':
+        return 'Normal';
+      case 'magic':
+      case '魔法':
+        return 'Magic';
+      case 'rare':
+      case '稀有':
+        return 'Rare';
+      case 'legendary':
+      case '傳奇':
+        return 'Legendary';
+      case 'unique':
+      case '獨特':
+        return 'Unique';
+      case 'holy':
+      case '神聖':
+        return 'Holy';
+      case 'ancient':
+      case '遠古':
+        return 'Ancient';
+      default:
+        break;
+    }
+  }
+
+  return undefined;
+}
+
+function entrySummary(entry: ContentEntry, section: string) {
+  const description = String(entry.description || '').trim();
+  const title = String(entry.title || '').trim();
+
+  if (section === 'tags') {
+    return description && normalize(description) !== normalize(title) ? description : '';
+  }
+
+  if (section === 'runemaster') {
+    const fields = [
+      propertyValue(entry.properties, 'Position'),
+      propertyValue(entry.properties, 'Cost'),
+      propertyValue(entry.properties, 'Max level'),
+    ].filter(Boolean);
+
+    return fields.length > 0 ? fields.join('  ·  ') : '';
+  }
+
+  return '';
+}
+
+export default function SectionSearch({
+  locale,
+  section,
+  sectionTitle,
+  entries,
+  terminologyMap,
+}: SectionSearchProps) {
+  const resolvedLocale = resolveLocale(locale);
+  const messages = getLocaleMessages(resolvedLocale);
   const router = useRouter();
   const pathname = usePathname();
   const readonlySearchParams = useSearchParams();
@@ -424,6 +649,7 @@ export default function SectionSearch({ locale, section, sectionTitle, entries }
   const mainGroups = groups.filter((group) => group.area === 'main');
   const moreGroups = groups.filter((group) => group.area === 'more');
   const moreOpened = searchParams.get('more') === 'Opened';
+  const textOnlyCards = section === 'tags' || section === 'runemaster';
 
   useEffect(() => {
     setSearchText(queryFromUrl);
@@ -523,11 +749,15 @@ export default function SectionSearch({ locale, section, sectionTitle, entries }
 
     const andMode = selectedValues(searchParams, group.key).includes('AsAnd');
 
+    const displayTitle = group.title
+      ? localizeTerminology(resolvedLocale, group.title, terminologyMap)
+      : '';
+
     return (
       <div className="module-filter-item" data-attr={group.key} data-title={Boolean(group.title)} key={group.key}>
         {group.title ? (
           <div className="module-filter-title">
-            <span>{group.title}</span>
+            <span>{displayTitle}</span>
             {group.modeToggle ? (
               <span className="module-filter-toggle" data-as={andMode ? 'and' : 'or'}>
                 <button
@@ -535,14 +765,14 @@ export default function SectionSearch({ locale, section, sectionTitle, entries }
                   onClick={() => setGroupMode(group.key, 'or')}
                   type="button"
                 >
-                  Or
+                  {messages.or}
                 </button>
                 <button
                   className={andMode ? 'is-active' : ''}
                   onClick={() => setGroupMode(group.key, 'and')}
                   type="button"
                 >
-                  And
+                  {messages.and}
                 </button>
               </span>
             ) : null}
@@ -555,11 +785,11 @@ export default function SectionSearch({ locale, section, sectionTitle, entries }
                 className={hasFilterValue(searchParams, group.key, option.value) ? 'module-filter-button is-selected' : 'module-filter-button'}
                 data-id={option.value}
                 onClick={() => toggleValue(group.key, option.value)}
-                title={option.label}
+                title={localizeTerminology(resolvedLocale, option.label, terminologyMap)}
                 type="button"
               >
                 <i />
-                <span>{option.label}</span>
+                <span>{localizeTerminology(resolvedLocale, option.label, terminologyMap)}</span>
               </button>
             </div>
           ))}
@@ -572,19 +802,19 @@ export default function SectionSearch({ locale, section, sectionTitle, entries }
     <div className="module-search" data-section={section}>
       <div className="module-search-bar" role="search">
         <label className="module-search-label" htmlFor={`module-search-${section}`}>
-          Name search
+          {messages.nameSearch}
         </label>
         <div className="module-search-control">
           <input
             id={`module-search-${section}`}
             onChange={(event) => updateSearch(event.target.value)}
-            placeholder={`Search ${sectionTitle} by name`}
+            placeholder={formatMessage(messages.searchByName, { sectionTitle })}
             type="search"
             value={searchText}
           />
           {searchText ? (
             <button className="module-search-clear" onClick={clearSearch} type="button">
-              Clear
+              {messages.clear}
             </button>
           ) : null}
         </div>
@@ -602,11 +832,11 @@ export default function SectionSearch({ locale, section, sectionTitle, entries }
                       className={moreOpened ? 'module-filter-button is-selected' : 'module-filter-button'}
                       data-id="Closed"
                       onClick={() => setMoreOpened(!moreOpened)}
-                      title="More"
+                      title={messages.more}
                       type="button"
                     >
                       <i />
-                      <span>More</span>
+                      <span>{messages.more}</span>
                     </button>
                   </div>
                 </div>
@@ -630,48 +860,83 @@ export default function SectionSearch({ locale, section, sectionTitle, entries }
 
       <div className="module-result-bar">
         <div className="content_list_count">
-          {filteredEntries.length > 0 ? `Items found: ${filteredEntries.length}` : 'Not matching'}
+          {filteredEntries.length > 0
+            ? formatMessage(messages.itemsFound, { count: filteredEntries.length })
+            : messages.notMatching}
         </div>
         {searchParams.size > 0 ? (
           <button className="module-clear-button" onClick={clearFilters} type="button">
-            Clear
+            {messages.clear}
           </button>
         ) : null}
       </div>
 
       {filteredEntries.length > 0 ? (
-        <ul className="content_list module-content-list" data-type="items">
+        <ul
+          className={textOnlyCards ? 'content_list module-content-list module-content-list--text' : 'content_list module-content-list'}
+          data-type="items"
+        >
           {filteredEntries.map((entry) => (
             <li
               className="content_list_item module-content-list-item"
               data-id={entry.source_key}
-              data-stat={entry.list_stat || undefined}
+              data-stat={entry.base_list_stat || entry.list_stat || undefined}
               key={entry.source_key}
             >
               <Link href={`/${locale}/${section}/${entry.slug}`}>
-                <span className="module-elem-list-item" data-rarity={entry.rarity || undefined} data-type={entry.entry_type || undefined}>
-                  <span className="module-elem-rarity" data-rarity={entry.rarity || undefined} />
-                  <span className="module-elem-content">
-                    <span className="module-elem-image" data-type={entry.entry_type || undefined}>
-                      {entry.image_url ? <img alt="" className="module-elem-icon" src={entry.image_url} /> : null}
-                      {entry.list_stat ? <span className="module-elem-point" data-stat={entry.list_stat} /> : null}
+                <span
+                  className={textOnlyCards ? 'module-elem-list-item module-elem-list-item--text' : 'module-elem-list-item'}
+                  data-rarity={rarityDataValue(entry)}
+                  data-type={entry.entry_type || undefined}
+                >
+                  <span
+                    className="module-elem-rarity"
+                    data-rarity={rarityDataValue(entry)}
+                  />
+                  {textOnlyCards ? (
+                    <span className="module-elem-text">
+                      <span className="module-elem-props module-elem-props--text">
+                        {displayProps(entry, section).map((prop) => (
+                          <span data-prop={prop} key={prop}>
+                            {localizeTerminology(resolvedLocale, prop, terminologyMap)}
+                          </span>
+                        ))}
+                      </span>
+                      <span className="module-elem-title module-elem-title--text">{entry.title}</span>
+                      {entrySummary(entry, section) ? (
+                        <span className="module-elem-summary">{entrySummary(entry, section)}</span>
+                      ) : null}
                     </span>
-                    <span className="module-elem-props">
-                      {displayProps(entry).map((prop) => (
-                        <span data-prop={prop} key={prop}>
-                          {prop}
+                  ) : (
+                    <>
+                      <span className="module-elem-content">
+                        <span className="module-elem-image" data-type={entry.entry_type || undefined}>
+                          {entry.image_url ? <img alt="" className="module-elem-icon" src={entry.image_url} /> : null}
+                          {entry.list_stat ? (
+                            <span
+                              className="module-elem-point"
+                              data-stat={entry.base_list_stat || entry.list_stat}
+                            />
+                          ) : null}
                         </span>
-                      ))}
-                    </span>
-                  </span>
-                  <span className="module-elem-title">{entry.title}</span>
+                        <span className="module-elem-props">
+                          {displayProps(entry, section).map((prop) => (
+                            <span data-prop={prop} key={prop}>
+                              {localizeTerminology(resolvedLocale, prop, terminologyMap)}
+                            </span>
+                          ))}
+                        </span>
+                      </span>
+                      <span className="module-elem-title">{entry.title}</span>
+                    </>
+                  )}
                 </span>
               </Link>
             </li>
           ))}
         </ul>
       ) : (
-        <div className="empty-state">没有找到符合当前筛选条件的 {sectionTitle}。</div>
+        <div className="empty-state">{formatMessage(messages.noFilterResults, { sectionTitle })}</div>
       )}
     </div>
   );

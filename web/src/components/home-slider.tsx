@@ -2,13 +2,16 @@
 
 import { useEffect, useState } from 'react';
 import type { HomeSlide } from '@/lib/cms';
+import { formatMessage, getLocaleMessages, localizeInternalHref, resolveLocale } from '@/lib/i18n';
 
 function isExternalHref(href: string) {
   return /^https?:\/\//i.test(href || '');
 }
 
-export function HomeSlider({ slides }: { slides: HomeSlide[] }) {
+export function HomeSlider({ locale, slides }: { locale: string; slides: HomeSlide[] }) {
   const [active, setActive] = useState(0);
+  const resolvedLocale = resolveLocale(locale);
+  const messages = getLocaleMessages(resolvedLocale);
 
   useEffect(() => {
     if (slides.length <= 1) {
@@ -32,7 +35,7 @@ export function HomeSlider({ slides }: { slides: HomeSlide[] }) {
         {slides.map((slide, index) => (
           <a
             className={`home-slide ${index === active ? 'is-active' : ''}`}
-            href={slide.href}
+            href={isExternalHref(slide.href) ? slide.href : localizeInternalHref(slide.href, resolvedLocale)}
             key={slide.source_key}
             rel={isExternalHref(slide.href) ? 'noreferrer' : undefined}
             target={isExternalHref(slide.href) ? '_blank' : undefined}
@@ -45,7 +48,7 @@ export function HomeSlider({ slides }: { slides: HomeSlide[] }) {
               <img alt={slide.title} className="home-slide-image" src={slide.image_url} />
             ) : null}
             <div className="home-slide-copy">
-              <div className="home-slide-kicker">Featured</div>
+              <div className="home-slide-kicker">{messages.featured}</div>
               <h2 className="home-slide-title">{slide.title}</h2>
               {slide.subtitle ? <p className="home-slide-subtitle">{slide.subtitle}</p> : null}
             </div>
@@ -56,7 +59,7 @@ export function HomeSlider({ slides }: { slides: HomeSlide[] }) {
       {slides.length > 1 ? (
         <div className="home-slider-controls">
           <button
-            aria-label="Previous slide"
+            aria-label={messages.previousSlide}
             className="home-slider-arrow"
             onClick={() => setActive((active - 1 + slides.length) % slides.length)}
             type="button"
@@ -66,7 +69,7 @@ export function HomeSlider({ slides }: { slides: HomeSlide[] }) {
           <div className="home-slider-dots">
             {slides.map((slide, index) => (
               <button
-                aria-label={`Go to ${slide.title}`}
+                aria-label={formatMessage(messages.goToSlide, { title: slide.title })}
                 className={`home-slider-dot ${index === active ? 'is-active' : ''}`}
                 key={slide.source_key}
                 onClick={() => setActive(index)}
@@ -77,7 +80,7 @@ export function HomeSlider({ slides }: { slides: HomeSlide[] }) {
             ))}
           </div>
           <button
-            aria-label="Next slide"
+            aria-label={messages.nextSlide}
             className="home-slider-arrow"
             onClick={() => setActive((active + 1) % slides.length)}
             type="button"

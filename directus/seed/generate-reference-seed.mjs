@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fetchPage, fetchSection, fetchSectionItem } from '../../backend/scraper.mjs';
@@ -6,11 +6,32 @@ import { REMOTE_SECTION_NAMES, titleFromSection } from '../../backend/sections.m
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const outputDir = path.join(__dirname, 'generated');
+const runeGifManifestPath = path.join(outputDir, 'rune-gif-manifest.json');
 const origin = 'https://undecember.thein.ru';
 const locale = 'en';
 
 const requestedSections = process.argv.slice(2).filter(Boolean);
 const sectionsToExport = requestedSections.length > 0 ? requestedSections : REMOTE_SECTION_NAMES;
+
+async function loadRuneVideoPaths() {
+  try {
+    const payload = JSON.parse(await readFile(runeGifManifestPath, 'utf8'));
+    const items = Array.isArray(payload?.items) ? payload.items : [];
+    return new Map(
+      items
+        .filter((item) => typeof item?.slug === 'string' && typeof item?.public_path === 'string')
+        .map((item) => [item.slug, item.public_path]),
+    );
+  } catch (error) {
+    if (error && typeof error === 'object' && 'code' in error && error.code === 'ENOENT') {
+      return new Map();
+    }
+
+    throw error;
+  }
+}
+
+const runeVideoPaths = await loadRuneVideoPaths();
 
 function keyForSection(section) {
   return `${locale}:${section}`;
@@ -141,8 +162,13 @@ function inferTags(section, detail, entry) {
     ...(detail.tiles || []).flatMap((block) => [block.heading, ...(block.lines || [])]),
   ].join(' ');
 
+  const ignoredLabels = section === 'uniques'
+    ? new Set(['Level', 'Stat'])
+    : new Set();
+
   return inferredTagRules
     .filter(([, pattern]) => pattern.test(text))
+    .filter(([label]) => !ignoredLabels.has(label))
     .map(([label]) => label);
 }
 
@@ -213,7 +239,7 @@ function entryRecord(section, detail, summary, sortOrder) {
     subtitle: '',
     description: sanitize(detail.description || summary.description),
     image_url: toLocalUrl(detail.image || summary.image),
-    video_url: '',
+    video_url: section === 'runes' ? runeVideoPaths.get(summary.slug) || '' : '',
     rarity: sanitize(properties['Min. rarity'] || summary.rarity),
     acquisition_method: sanitize(properties['How to get'] || ''),
     weapon_requirement: sanitize(properties['Weapon'] || ''),
@@ -306,17 +332,29 @@ const seed = {
     },
   ],
   navigation_links: [],
+  navigation_links_translations: [],
   download_links: [],
+  download_links_translations: [],
   home_slides: [],
+  home_slides_translations: [],
   home_featured_cards: [],
+  home_featured_cards_translations: [],
   content_sections: [],
+  content_sections_translations: [],
   content_entries: [],
+  content_entries_translations: [],
   entry_tags: [],
+  entry_tags_translations: [],
   entry_properties: [],
+  entry_properties_translations: [],
   entry_stat_blocks: [],
+  entry_stat_blocks_translations: [],
   entry_stat_lines: [],
+  entry_stat_lines_translations: [],
   entry_awakening_groups: [],
+  entry_awakening_groups_translations: [],
   entry_awakening_lines: [],
+  entry_awakening_lines_translations: [],
 };
 
 const homePage = await fetchPage(`/${locale}/`);

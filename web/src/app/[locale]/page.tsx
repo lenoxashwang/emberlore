@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { HomeSlider } from '@/components/home-slider';
 import { getHomePageData } from '@/lib/cms';
+import { getLocaleMessages, localizeInternalHref, resolveLocale } from '@/lib/i18n';
 
 function isExternalHref(href: string) {
   return /^https?:\/\//i.test(href || '');
@@ -11,7 +12,9 @@ export default async function LocaleHomePage({
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale = resolveLocale(rawLocale);
+  const messages = getLocaleMessages(locale);
   const data = await getHomePageData(locale);
   const wideCards = data.cards.filter((card) => card.card_size === 'wide');
   const tileCards = data.cards.filter((card) => card.card_size !== 'wide');
@@ -37,14 +40,14 @@ export default async function LocaleHomePage({
         ))}
       </section>
 
-      <HomeSlider slides={data.slides} />
+      <HomeSlider locale={locale} slides={data.slides} />
 
       {wideCards.map((card) =>
         isExternalHref(card.href) ? (
           <a
             className="feature-card"
             data-size={card.card_size}
-            href={card.href}
+            href={localizeInternalHref(card.href, locale)}
             key={card.source_key}
             rel="noreferrer"
             target="_blank"
@@ -61,7 +64,12 @@ export default async function LocaleHomePage({
             </div>
           </a>
         ) : (
-          <Link className="feature-card" data-size={card.card_size} href={card.href} key={card.source_key}>
+          <Link
+            className="feature-card"
+            data-size={card.card_size}
+            href={localizeInternalHref(card.href, locale)}
+            key={card.source_key}
+          >
             <span className="home-feature-bg" style={{ background: card.background_css || undefined }} />
             {card.image_url ? (
               <img alt={card.title} className="home-feature-image" src={card.image_url} />
@@ -83,7 +91,7 @@ export default async function LocaleHomePage({
               <a
                 className="feature-card"
                 data-size={card.card_size}
-                href={card.href}
+                href={localizeInternalHref(card.href, locale)}
                 key={card.source_key}
                 rel="noreferrer"
                 target="_blank"
@@ -100,7 +108,12 @@ export default async function LocaleHomePage({
                 </div>
               </a>
             ) : (
-              <Link className="feature-card" data-size={card.card_size} href={card.href} key={card.source_key}>
+              <Link
+                className="feature-card"
+                data-size={card.card_size}
+                href={localizeInternalHref(card.href, locale)}
+                key={card.source_key}
+              >
                 <span className="home-feature-bg" style={{ background: card.background_css || undefined }} />
                 {card.image_url ? (
                   <img alt={card.title} className="home-feature-image" src={card.image_url} />
@@ -118,10 +131,10 @@ export default async function LocaleHomePage({
       ) : null}
 
       {data.cards.length === 0 ? (
-        <section>
-          <h2>Sections</h2>
+          <section>
+          <h2>{messages.sections}</h2>
           {data.sections.length === 0 ? (
-            <div className="empty-state">Directus 里还没有栏目数据。</div>
+            <div className="empty-state">{messages.emptySections}</div>
           ) : (
             <div className="section-grid">
               {data.sections.map((section) => (

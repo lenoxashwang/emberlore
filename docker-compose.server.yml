@@ -1,0 +1,25 @@
+services:
+  directus:
+    image: directus/directus:11.17.4
+    container_name: emberlore-directus
+    ports:
+      - "${DIRECTUS_PORT:-8056}:8055"
+    env_file:
+      - ./directus/.env
+    volumes:
+      - ./directus/database:/directus/database
+      - ./directus/uploads:/directus/uploads
+      - ./directus/extensions:/directus/extensions
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ./web
+      network: host
+    container_name: emberlore-web
+    depends_on:
+      - directus
+    env_file:
+      - ./web/.env.local
+    network_mode: host
+    restart: unless-stopped

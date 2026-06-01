@@ -89,6 +89,28 @@ function extractStyleValue(styleText, property = 'background') {
   return text.replace(/;$/, '').trim();
 }
 
+function uniquePropBlockTitle(propType) {
+  const normalized = String(propType || '').trim().toLowerCase();
+
+  if (normalized === 'main') {
+    return 'Base Stats';
+  }
+
+  if (normalized === 'sub') {
+    return 'Special Effect';
+  }
+
+  if (normalized === 'options') {
+    return 'Option';
+  }
+
+  return normalized
+    .split(/[^a-z0-9]+/i)
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+}
+
 function propValues(html) {
   return extractAll(
     html,
@@ -456,6 +478,24 @@ function parseDetailPage(html, pathname) {
     },
   ).filter((block) => block.heading || block.lines.length > 0);
 
+  const uniquePropBlocks = [];
+  const propSegments = html.split(/<div class="Elem_card_props__[^"]*"[^>]*prop-type="([^"]+)"[^>]*>/g);
+
+  for (let index = 1; index < propSegments.length; index += 2) {
+    const propType = propSegments[index];
+    const blockHtml = propSegments[index + 1] || '';
+    const lines = extractPropLines(blockHtml);
+
+    if (lines.length === 0) {
+      continue;
+    }
+
+    uniquePropBlocks.push({
+      heading: uniquePropBlockTitle(propType),
+      lines,
+    });
+  }
+
   const awakenings = html
     .split('<div class="Elem_card_awakening_block___hH8A"')
     .slice(1)
@@ -476,7 +516,7 @@ function parseDetailPage(html, pathname) {
     description: stripHtml(getMatch(html, /<div class="Elem_card_desc__[^"]*"><span[^>]*>([\s\S]*?)<\/span>/i)),
     tags,
     properties,
-    tiles: tileBlocks,
+    tiles: [...uniquePropBlocks, ...tileBlocks],
     awakenings,
   };
 }

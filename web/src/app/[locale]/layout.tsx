@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { getNavigation, getSiteSettings } from '@/lib/cms';
+import LocaleSwitcher from '@/components/locale-switcher';
+import { getLocaleMessages, localizeInternalHref, resolveLocale } from '@/lib/i18n';
 
 export default async function LocaleLayout({
   children,
@@ -8,7 +10,9 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale = resolveLocale(rawLocale);
+  const messages = getLocaleMessages(locale);
   const [settings, navigation] = await Promise.all([
     getSiteSettings(),
     getNavigation(locale),
@@ -25,23 +29,31 @@ export default async function LocaleLayout({
     <div className="shell">
       <aside className="sidebar">
         <h1 className="logo">{settings.logo_text || settings.site_name || 'Undecember'}</h1>
-        {Object.entries(grouped).map(([group, items]) => (
-          <div className="nav-group" key={group}>
-            {items.map((item) => (
-              <Link
-                className="nav-link"
-                href={item.href}
-                key={item.source_key}
-                target={item.open_in_new_tab ? '_blank' : undefined}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        ))}
+        <div className="nav-groups">
+          {Object.entries(grouped).map(([group, items]) => (
+            <div className="nav-group" key={group}>
+              {items.map((item) => (
+                <Link
+                  className="nav-link"
+                  href={localizeInternalHref(item.href, locale)}
+                  key={item.source_key}
+                  target={item.open_in_new_tab ? '_blank' : undefined}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          ))}
+        </div>
+        <div className="sidebar-footer">
+          <Link className="account-shortcut" href={localizeInternalHref('/account', locale)}>
+            <span className="account-shortcut-label">{messages.accountCenter}</span>
+            <span className="account-shortcut-hint">{messages.accountShortcutHint}</span>
+          </Link>
+          <LocaleSwitcher locale={locale} />
+        </div>
       </aside>
       <main className="content">{children}</main>
     </div>
   );
 }
-

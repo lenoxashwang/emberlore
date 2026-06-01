@@ -1,0 +1,615 @@
+{
+  "navigation_links_translations": [
+    {
+      "source_key": "zh-CN:nav:1",
+      "base_source_key": "en:nav:1",
+      "locale": "zh-CN",
+      "label": "符文库"
+    },
+    {
+      "source_key": "zh-CN:nav:2",
+      "base_source_key": "en:nav:2",
+      "locale": "zh-CN",
+      "label": "众神权能"
+    },
+    {
+      "source_key": "zh-CN:nav:3",
+      "base_source_key": "en:nav:3",
+      "locale": "zh-CN",
+      "label": "遗物"
+    },
+    {
+      "source_key": "zh-CN:nav:4",
+      "base_source_key": "en:nav:4",
+      "locale": "zh-CN",
+      "label": "符文大师之路"
+    },
+    {
+      "source_key": "zh-CN:nav:5",
+      "base_source_key": "en:nav:5",
+      "locale": "zh-CN",
+      "label": "词缀"
+    },
+    {
+      "source_key": "zh-CN:nav:6",
+      "base_source_key": "en:nav:6",
+      "locale": "zh-CN",
+      "label": "精华"
+    },
+    {
+      "source_key": "zh-CN:nav:7",
+      "base_source_key": "en:nav:7",
+      "locale": "zh-CN",
+      "label": "金币"
+    },
+    {
+      "source_key": "zh-CN:nav:8",
+      "base_source_key": "en:nav:8",
+      "locale": "zh-CN",
+      "label": "药剂"
+    },
+    {
+      "source_key": "zh-CN:nav:9",
+      "base_source_key": "en:nav:9",
+      "locale": "zh-CN",
+      "label": "材料"
+    },
+    {
+      "source_key": "zh-CN:nav:10",
+      "base_source_key": "en:nav:10",
+      "locale": "zh-CN",
+      "label": "符文石"
+    }
+  ],
+  "home_slides_translations": [
+    {
+      "source_key": "zh-CN:home:slide:1",
+      "base_source_key": "en:home:slide:1",
+      "locale": "zh-CN",
+      "title": "符文库",
+      "subtitle": ""
+    },
+    {
+      "source_key": "zh-CN:home:slide:2",
+      "base_source_key": "en:home:slide:2",
+      "locale": "zh-CN",
+      "title": "精华",
+      "subtitle": ""
+    },
+    {
+      "source_key": "zh-CN:home:slide:3",
+      "base_source_key": "en:home:slide:3",
+      "locale": "zh-CN",
+      "title": "材料",
+      "subtitle": ""
+    }
+  ],
+  "home_featured_cards_translations": [
+    {
+      "source_key": "zh-CN:home:card:wide:1",
+      "base_source_key": "en:home:card:wide:1",
+      "locale": "zh-CN",
+      "title": "符文库",
+      "subtitle": "符文的说明与属性一览"
+    },
+    {
+      "source_key": "zh-CN:home:card:tile:1",
+      "base_source_key": "en:home:card:tile:1",
+      "locale": "zh-CN",
+      "title": "精华",
+      "subtitle": ""
+    },
+    {
+      "source_key": "zh-CN:home:card:tile:2",
+      "base_source_key": "en:home:card:tile:2",
+      "locale": "zh-CN",
+      "title": "词缀",
+      "subtitle": ""
+    },
+    {
+      "source_key": "zh-CN:home:card:tile:3",
+      "base_source_key": "en:home:card:tile:3",
+      "locale": "zh-CN",
+      "title": "金币",
+      "subtitle": ""
+    },
+    {
+      "source_key": "zh-CN:home:card:tile:4",
+      "base_source_key": "en:home:card:tile:4",
+      "locale": "zh-CN",
+      "title": "装备词条",
+      "subtitle": ""
+    },
+    {
+      "source_key": "zh-CN:home:card:tile:5",
+      "base_source_key": "en:home:card:tile:5",
+      "locale": "zh-CN",
+      "title": "药剂",
+      "subtitle": ""
+    },
+    {
+      "source_key": "zh-CN:home:card:tile:6",
+      "base_source_key": "en:home:card:tile:6",
+      "locale": "zh-CN",
+      "title": "材料",
+      "subtitle": ""
+    },
+    {
+      "source_key": "zh-CN:home:card:tile:7",
+      "base_source_key": "en:home:card:tile:7",
+      "locale": "zh-CN",
+      "title": "符文石",
+      "subtitle": ""
+    },
+    {
+      "source_key": "zh-CN:home:card:tile:8",
+      "base_source_key": "en:home:card:tile:8",
+      "locale": "zh-CN",
+      "title": "语言补丁",
+      "subtitle": ""
+    }
+  ],
+  "content_sections_translations": [
+    {
+      "source_key": "zh-CN:runes",
+      "base_source_key": "en:runes",
+      "locale": "zh-CN",
+      "title": "符文库",
+      "description": "符文的说明与属性一览"
+    }
+  ],
+  "content_entries_translations": [
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror",
+      "base_source_key": "en:runes:ShoutOfTerror",
+      "locale": "zh-CN",
+      "title": "恐惧战吼",
+      "subtitle": "",
+      "description": "对施法者周围的敌人造成伤害，并削弱其护甲。命中的敌人有概率陷入眩晕。",
+      "list_stat": "力量",
+      "list_props": "力量 掉落 商店",
+      "rarity": "普通",
+      "acquisition_method": "掉落 商店",
+      "weapon_requirement": "全部武器",
+      "seo_title": "技能 - 恐惧战吼 - Undecember",
+      "seo_description": "对施法者周围的敌人造成伤害，并削弱其护甲。命中的敌人有概率陷入眩晕。"
+    },
+    {
+      "source_key": "zh-CN:runes:FrostWave",
+      "base_source_key": "en:runes:FrostWave",
+      "locale": "zh-CN",
+      "title": "寒霜波动",
+      "subtitle": "",
+      "description": "向施法者前方释放寒冷能量，对敌人造成伤害。",
+      "list_stat": "力量",
+      "list_props": "力量 掉落 商店",
+      "rarity": "普通",
+      "acquisition_method": "掉落 商店",
+      "weapon_requirement": "剑 斧 钝器 法杖",
+      "seo_title": "技能 - 寒霜波动 - Undecember",
+      "seo_description": "向施法者前方释放寒冷能量，对敌人造成伤害。"
+    }
+  ],
+  "entry_tags_translations": [
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:tag:1",
+      "base_source_key": "en:runes:ShoutOfTerror:tag:1",
+      "locale": "zh-CN",
+      "label": "攻击"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:tag:2",
+      "base_source_key": "en:runes:ShoutOfTerror:tag:2",
+      "locale": "zh-CN",
+      "label": "近战"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:tag:3",
+      "base_source_key": "en:runes:ShoutOfTerror:tag:3",
+      "locale": "zh-CN",
+      "label": "范围效果"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:tag:4",
+      "base_source_key": "en:runes:ShoutOfTerror:tag:4",
+      "locale": "zh-CN",
+      "label": "战吼"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:tag:5",
+      "base_source_key": "en:runes:ShoutOfTerror:tag:5",
+      "locale": "zh-CN",
+      "label": "打击"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:tag:6",
+      "base_source_key": "en:runes:ShoutOfTerror:tag:6",
+      "locale": "zh-CN",
+      "label": "物理"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:tag:7",
+      "base_source_key": "en:runes:ShoutOfTerror:tag:7",
+      "locale": "zh-CN",
+      "label": "持续"
+    },
+    {
+      "source_key": "zh-CN:runes:FrostWave:tag:1",
+      "base_source_key": "en:runes:FrostWave:tag:1",
+      "locale": "zh-CN",
+      "label": "攻击"
+    },
+    {
+      "source_key": "zh-CN:runes:FrostWave:tag:2",
+      "base_source_key": "en:runes:FrostWave:tag:2",
+      "locale": "zh-CN",
+      "label": "近战"
+    },
+    {
+      "source_key": "zh-CN:runes:FrostWave:tag:3",
+      "base_source_key": "en:runes:FrostWave:tag:3",
+      "locale": "zh-CN",
+      "label": "范围效果"
+    },
+    {
+      "source_key": "zh-CN:runes:FrostWave:tag:4",
+      "base_source_key": "en:runes:FrostWave:tag:4",
+      "locale": "zh-CN",
+      "label": "打击"
+    },
+    {
+      "source_key": "zh-CN:runes:FrostWave:tag:5",
+      "base_source_key": "en:runes:FrostWave:tag:5",
+      "locale": "zh-CN",
+      "label": "寒冷"
+    },
+    {
+      "source_key": "zh-CN:runes:FrostWave:tag:6",
+      "base_source_key": "en:runes:FrostWave:tag:6",
+      "locale": "zh-CN",
+      "label": "暗影"
+    }
+  ],
+  "entry_properties_translations": [
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:property:1",
+      "base_source_key": "en:runes:ShoutOfTerror:property:1",
+      "locale": "zh-CN",
+      "label": "最低稀有度",
+      "value": "普通"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:property:2",
+      "base_source_key": "en:runes:ShoutOfTerror:property:2",
+      "locale": "zh-CN",
+      "label": "获取方式",
+      "value": "掉落 商店"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:property:3",
+      "base_source_key": "en:runes:ShoutOfTerror:property:3",
+      "locale": "zh-CN",
+      "label": "可购买章节",
+      "value": "第3章 第6-10章 第11-12章"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:property:4",
+      "base_source_key": "en:runes:ShoutOfTerror:property:4",
+      "locale": "zh-CN",
+      "label": "武器",
+      "value": "全部武器"
+    },
+    {
+      "source_key": "zh-CN:runes:FrostWave:property:1",
+      "base_source_key": "en:runes:FrostWave:property:1",
+      "locale": "zh-CN",
+      "label": "最低稀有度",
+      "value": "普通"
+    },
+    {
+      "source_key": "zh-CN:runes:FrostWave:property:2",
+      "base_source_key": "en:runes:FrostWave:property:2",
+      "locale": "zh-CN",
+      "label": "获取方式",
+      "value": "掉落 商店"
+    },
+    {
+      "source_key": "zh-CN:runes:FrostWave:property:3",
+      "base_source_key": "en:runes:FrostWave:property:3",
+      "locale": "zh-CN",
+      "label": "可购买章节",
+      "value": "第1章 第6-10章 第11-12章"
+    },
+    {
+      "source_key": "zh-CN:runes:FrostWave:property:4",
+      "base_source_key": "en:runes:FrostWave:property:4",
+      "locale": "zh-CN",
+      "label": "武器",
+      "value": "剑 斧 钝器 法杖"
+    }
+  ],
+  "entry_stat_blocks_translations": [
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:1",
+      "base_source_key": "en:runes:ShoutOfTerror:block:1",
+      "locale": "zh-CN",
+      "title": "符文等级 1"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:2",
+      "base_source_key": "en:runes:ShoutOfTerror:block:2",
+      "locale": "zh-CN",
+      "title": "符文等级 45"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:3",
+      "base_source_key": "en:runes:ShoutOfTerror:block:3",
+      "locale": "zh-CN",
+      "title": "符文品阶"
+    },
+    {
+      "source_key": "zh-CN:runes:FrostWave:block:1",
+      "base_source_key": "en:runes:FrostWave:block:1",
+      "locale": "zh-CN",
+      "title": "符文等级 1"
+    },
+    {
+      "source_key": "zh-CN:runes:FrostWave:block:2",
+      "base_source_key": "en:runes:FrostWave:block:2",
+      "locale": "zh-CN",
+      "title": "符文等级 45"
+    },
+    {
+      "source_key": "zh-CN:runes:FrostWave:block:3",
+      "base_source_key": "en:runes:FrostWave:block:3",
+      "locale": "zh-CN",
+      "title": "符文品阶"
+    }
+  ],
+  "entry_stat_lines_translations": [
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:1:line:1",
+      "base_source_key": "en:runes:ShoutOfTerror:block:1:line:1",
+      "locale": "zh-CN",
+      "content": "法力消耗 15"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:1:line:2",
+      "base_source_key": "en:runes:ShoutOfTerror:block:1:line:2",
+      "locale": "zh-CN",
+      "content": "冷却时间 20 秒"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:1:line:3",
+      "base_source_key": "en:runes:ShoutOfTerror:block:1:line:3",
+      "locale": "zh-CN",
+      "content": "物理元素"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:1:line:4",
+      "base_source_key": "en:runes:ShoutOfTerror:block:1:line:4",
+      "locale": "zh-CN",
+      "content": "战吼范围 350"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:1:line:5",
+      "base_source_key": "en:runes:ShoutOfTerror:block:1:line:5",
+      "locale": "zh-CN",
+      "content": "物理伤害 21%"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:1:line:6",
+      "base_source_key": "en:runes:ShoutOfTerror:block:1:line:6",
+      "locale": "zh-CN",
+      "content": "物理伤害 +8"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:1:line:7",
+      "base_source_key": "en:runes:ShoutOfTerror:block:1:line:7",
+      "locale": "zh-CN",
+      "content": "眩晕几率 +20%"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:1:line:8",
+      "base_source_key": "en:runes:ShoutOfTerror:block:1:line:8",
+      "locale": "zh-CN",
+      "content": "最短眩晕持续时间 2 秒"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:1:line:9",
+      "base_source_key": "en:runes:ShoutOfTerror:block:1:line:9",
+      "locale": "zh-CN",
+      "content": "战吼持续时间 3 秒"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:1:line:10",
+      "base_source_key": "en:runes:ShoutOfTerror:block:1:line:10",
+      "locale": "zh-CN",
+      "content": "战吼技能效果"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:1:line:11",
+      "base_source_key": "en:runes:ShoutOfTerror:block:1:line:11",
+      "locale": "zh-CN",
+      "content": "被战吼命中的敌人护甲削弱 15%"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:1:line:12",
+      "base_source_key": "en:runes:ShoutOfTerror:block:1:line:12",
+      "locale": "zh-CN",
+      "content": "被战吼命中的敌人元素抗性削弱 15%"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:2:line:1",
+      "base_source_key": "en:runes:ShoutOfTerror:block:2:line:1",
+      "locale": "zh-CN",
+      "content": "法力消耗 37"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:2:line:2",
+      "base_source_key": "en:runes:ShoutOfTerror:block:2:line:2",
+      "locale": "zh-CN",
+      "content": "冷却时间 20 秒"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:2:line:3",
+      "base_source_key": "en:runes:ShoutOfTerror:block:2:line:3",
+      "locale": "zh-CN",
+      "content": "物理元素"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:2:line:4",
+      "base_source_key": "en:runes:ShoutOfTerror:block:2:line:4",
+      "locale": "zh-CN",
+      "content": "战吼范围 350"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:2:line:5",
+      "base_source_key": "en:runes:ShoutOfTerror:block:2:line:5",
+      "locale": "zh-CN",
+      "content": "物理伤害 67%"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:2:line:6",
+      "base_source_key": "en:runes:ShoutOfTerror:block:2:line:6",
+      "locale": "zh-CN",
+      "content": "物理伤害 +377"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:2:line:7",
+      "base_source_key": "en:runes:ShoutOfTerror:block:2:line:7",
+      "locale": "zh-CN",
+      "content": "眩晕几率 +45.5%"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:2:line:8",
+      "base_source_key": "en:runes:ShoutOfTerror:block:2:line:8",
+      "locale": "zh-CN",
+      "content": "最短眩晕持续时间 2 秒"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:2:line:9",
+      "base_source_key": "en:runes:ShoutOfTerror:block:2:line:9",
+      "locale": "zh-CN",
+      "content": "战吼持续时间 3 秒"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:2:line:10",
+      "base_source_key": "en:runes:ShoutOfTerror:block:2:line:10",
+      "locale": "zh-CN",
+      "content": "战吼技能效果"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:2:line:11",
+      "base_source_key": "en:runes:ShoutOfTerror:block:2:line:11",
+      "locale": "zh-CN",
+      "content": "被战吼命中的敌人护甲削弱 30%"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:2:line:12",
+      "base_source_key": "en:runes:ShoutOfTerror:block:2:line:12",
+      "locale": "zh-CN",
+      "content": "被战吼命中的敌人元素抗性削弱 30%"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:3:line:1",
+      "base_source_key": "en:runes:ShoutOfTerror:block:3:line:1",
+      "locale": "zh-CN",
+      "content": "恐惧战吼效果 +10%"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:3:line:2",
+      "base_source_key": "en:runes:ShoutOfTerror:block:3:line:2",
+      "locale": "zh-CN",
+      "content": "恐惧战吼效果 +24%"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:block:3:line:3",
+      "base_source_key": "en:runes:ShoutOfTerror:block:3:line:3",
+      "locale": "zh-CN",
+      "content": "恐惧战吼效果 +40%"
+    }
+  ],
+  "entry_awakening_groups_translations": [
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:awakening:1",
+      "base_source_key": "en:runes:ShoutOfTerror:awakening:1",
+      "locale": "zh-CN",
+      "title": "本源"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:awakening:2",
+      "base_source_key": "en:runes:ShoutOfTerror:awakening:2",
+      "locale": "zh-CN",
+      "title": "起源"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:awakening:3",
+      "base_source_key": "en:runes:ShoutOfTerror:awakening:3",
+      "locale": "zh-CN",
+      "title": "真理"
+    },
+    {
+      "source_key": "zh-CN:runes:FrostWave:awakening:1",
+      "base_source_key": "en:runes:FrostWave:awakening:1",
+      "locale": "zh-CN",
+      "title": "本源"
+    },
+    {
+      "source_key": "zh-CN:runes:FrostWave:awakening:2",
+      "base_source_key": "en:runes:FrostWave:awakening:2",
+      "locale": "zh-CN",
+      "title": "起源"
+    },
+    {
+      "source_key": "zh-CN:runes:FrostWave:awakening:3",
+      "base_source_key": "en:runes:FrostWave:awakening:3",
+      "locale": "zh-CN",
+      "title": "真理"
+    }
+  ],
+  "entry_awakening_lines_translations": [
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:awakening:1:line:1",
+      "base_source_key": "en:runes:ShoutOfTerror:awakening:1:line:1",
+      "locale": "zh-CN",
+      "content": "战吼技能符文效果 +[10-30]%"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:awakening:1:line:2",
+      "base_source_key": "en:runes:ShoutOfTerror:awakening:1:line:2",
+      "locale": "zh-CN",
+      "content": "战吼技能符文效果范围 +[40-60]%"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:awakening:2:line:1",
+      "base_source_key": "en:runes:ShoutOfTerror:awakening:2:line:1",
+      "locale": "zh-CN",
+      "content": "战吼技能符文冷却恢复速度 +[30-50]%"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:awakening:2:line:2",
+      "base_source_key": "en:runes:ShoutOfTerror:awakening:2:line:2",
+      "locale": "zh-CN",
+      "content": "战吼技能符文施放速度 +[60-100]%"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:awakening:3:line:1",
+      "base_source_key": "en:runes:ShoutOfTerror:awakening:3:line:1",
+      "locale": "zh-CN",
+      "content": "无视敌人闪避率"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:awakening:3:line:2",
+      "base_source_key": "en:runes:ShoutOfTerror:awakening:3:line:2",
+      "locale": "zh-CN",
+      "content": "必定暴击"
+    },
+    {
+      "source_key": "zh-CN:runes:ShoutOfTerror:awakening:3:line:3",
+      "base_source_key": "en:runes:ShoutOfTerror:awakening:3:line:3",
+      "locale": "zh-CN",
+      "content": "战吼技能符文冷却恢复速度 +[15-30]%"
+    }
+  ]
+}

@@ -1,0 +1,1393 @@
+[
+  {
+    "slug": "ShoutOfTerror",
+    "source_key": "en:runes:ShoutOfTerror",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E6%81%90%E6%80%96%E7%9A%84%E5%90%B6%E5%96%8A",
+    "list": {
+      "url": "/zh-tw/wiki/%E6%81%90%E6%80%96%E7%9A%84%E5%90%B6%E5%96%8A",
+      "icon": "Icon Skill BattleCry 01",
+      "title": "恐怖的吶喊",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 3、Act 6-10",
+      "weapon": "所有武器",
+      "score": "1"
+    },
+    "detail": {
+      "title": "恐怖的吶喊",
+      "hasNoContent": false,
+      "effectTags": [
+        "攻擊",
+        "近距",
+        "廣域",
+        "吶喊",
+        "打擊",
+        "物理",
+        "持續時間"
+      ],
+      "description": "對施展者周圍範圍內的敵人造成傷害後，使防禦度減幅。以一定的機率對受到傷害得敵人造成暈眩。",
+      "topRows": [
+        {
+          "label": "消耗魔力",
+          "value": "15"
+        },
+        {
+          "label": "冷卻時間",
+          "value": "20秒"
+        },
+        {
+          "label": "一般",
+          "value": "受到吶喊命中的敵人之防禦度減幅 +15％"
+        },
+        {
+          "label": "魔法",
+          "value": "受到吶喊命中的敵人之防禦度減幅 +24％"
+        },
+        {
+          "label": "稀有",
+          "value": "受到吶喊命中的敵人之防禦度減幅 +40％"
+        }
+      ],
+      "detailLines": [
+        "物理屬性",
+        "吶喊範圍 350",
+        "物理傷害 21%",
+        "物理傷害 +8",
+        "暈眩發生指數 +104",
+        "吶喊持續時間 3 s",
+        "吶喊技能效果",
+        "受到吶喊命中的敵人之防禦度減幅 16％"
+      ],
+      "gradeRows": [
+        {
+          "label": "一般",
+          "value": "受到吶喊命中的敵人之防禦度減幅 +15％"
+        },
+        {
+          "label": "魔法",
+          "value": "受到吶喊命中的敵人之防禦度減幅 +24％"
+        },
+        {
+          "label": "稀有",
+          "value": "受到吶喊命中的敵人之防禦度減幅 +40％"
+        }
+      ],
+      "rawText": "恐怖的吶喊\n登入以儲存 儲存  編輯\n歷史\n重新整理\n討論 (0)\n恐怖的吶喊\n效果\t攻擊 近距 廣域 吶喊 打擊 物理 持續時間\n消耗魔力\t15\n冷卻時間\t20秒\n技能說明\t對施展者周圍範圍內的敵人造成傷害後，使防禦度減幅。以一定的機率對受到傷害得敵人造成暈眩。\n詳細資料\n物理屬性\n吶喊範圍 350\n物理傷害 21%\n物理傷害 +8\n暈眩發生指數 +104\n吶喊持續時間 3 s\n吶喊技能效果\n受到吶喊命中的敵人之防禦度減幅 16％\n一般\t受到吶喊命中的敵人之防禦度減幅 +15％\n魔法\t受到吶喊命中的敵人之防禦度減幅 +24％\n稀有\t受到吶喊命中的敵人之防禦度減幅 +40％\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "FrostWave",
+    "source_key": "en:runes:FrostWave",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E5%AF%92%E5%86%B0%E6%B3%A2%E5%8B%95",
+    "list": {
+      "url": "/zh-tw/wiki/%E5%AF%92%E5%86%B0%E6%B3%A2%E5%8B%95",
+      "icon": "Icon Skill FrostWave 01",
+      "title": "寒冰波動",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 2、Act 6-10",
+      "weapon": "劍、斧頭、鈍器、手杖",
+      "score": "1"
+    },
+    "detail": {
+      "title": "寒冰波動",
+      "hasNoContent": false,
+      "effectTags": [
+        "攻擊",
+        "近距",
+        "廣域",
+        "打擊",
+        "冰霜"
+      ],
+      "description": "在施展者面前放出冰霜，並對敵人造成傷害。",
+      "topRows": [
+        {
+          "label": "消耗魔力",
+          "value": "5"
+        },
+        {
+          "label": "冷卻時間",
+          "value": "立即發動"
+        },
+        {
+          "label": "一般",
+          "value": "惡寒機率 +10%"
+        },
+        {
+          "label": "魔法",
+          "value": "惡寒機率 +15%"
+        },
+        {
+          "label": "稀有",
+          "value": "惡寒機率 +20%"
+        }
+      ],
+      "detailLines": [
+        "冰霜屬性",
+        "廣域範圍 600",
+        "冰霜傷害 122%",
+        "冰霜傷害 +42",
+        "惡寒機率 +30%",
+        "對受冰霜狀態異常的敵人造成傷害 +50%",
+        "冰霜效果 +15%",
+        "冰霜效果 +30%",
+        "對受冰霜狀態異常的敵人增加 15% 傷害",
+        "廣域範圍 +50",
+        "冰霜效果 +45%",
+        "對受冰霜狀態異常的敵人 30% 傷害",
+        "廣域範圍 +100"
+      ],
+      "gradeRows": [
+        {
+          "label": "一般",
+          "value": "惡寒機率 +10%"
+        },
+        {
+          "label": "魔法",
+          "value": "惡寒機率 +15%"
+        },
+        {
+          "label": "稀有",
+          "value": "惡寒機率 +20%"
+        }
+      ],
+      "rawText": "寒冰波動\n編輯\n寒冰波動\n效果\t攻擊 近距 廣域 打擊 冰霜\n消耗魔力\t5\n冷卻時間\t立即發動\n技能說明\t在施展者面前放出冰霜，並對敵人造成傷害。\n詳細資料\n冰霜屬性\n廣域範圍 600\n冰霜傷害 122%\n冰霜傷害 +42\n惡寒機率 +30%\n對受冰霜狀態異常的敵人造成傷害 +50%\n一般\t惡寒機率 +10%\n冰霜效果 +15%\n魔法\t惡寒機率 +15%\n冰霜效果 +30%\n對受冰霜狀態異常的敵人增加 15% 傷害\n廣域範圍 +50\n稀有\t惡寒機率 +20%\n冰霜效果 +45%\n對受冰霜狀態異常的敵人 30% 傷害\n廣域範圍 +100\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "ShieldCharge",
+    "source_key": "en:runes:ShieldCharge",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E7%9B%BE%E7%89%8C%E7%AA%81%E6%93%8A",
+    "list": {
+      "url": "/zh-tw/wiki/%E7%9B%BE%E7%89%8C%E7%AA%81%E6%93%8A",
+      "icon": "Icon Skill ShieldCharge 01",
+      "title": "盾牌突擊",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 2、Act 6-10",
+      "weapon": "盾",
+      "score": "1"
+    },
+    "detail": {
+      "title": "盾牌突擊",
+      "hasNoContent": false,
+      "effectTags": [
+        "攻擊",
+        "近距",
+        "廣域",
+        "吶喊",
+        "打擊",
+        "物理",
+        "移動"
+      ],
+      "description": "向前衝鋒對敵人造成物理傷害。",
+      "topRows": [
+        {
+          "label": "消耗魔力",
+          "value": "4"
+        },
+        {
+          "label": "冷卻時間",
+          "value": "5 秒"
+        },
+        {
+          "label": "一般",
+          "value": "護甲穿透 +10%"
+        },
+        {
+          "label": "魔法",
+          "value": "護甲穿透 +10%"
+        },
+        {
+          "label": "稀有",
+          "value": "護甲穿透 +15%"
+        }
+      ],
+      "detailLines": [
+        "物理屬性",
+        "最大使用次數 +2",
+        "命中率 +10%",
+        "影響區域 250",
+        "物理傷害 282%",
+        "物理傷害 +18",
+        "護甲穿透 +10%",
+        "共享進攻移動技能之間的冷卻時間",
+        "攻擊命中率 +20%",
+        "攻擊命中率 +20%",
+        "擊中最大射程技能時的眩暈率 +50",
+        "打擊傷害乘數 +80%",
+        "攻擊命中率 +30%",
+        "擊中最大射程技能時的眩暈率 +500",
+        "打擊傷害乘數 +170%"
+      ],
+      "gradeRows": [
+        {
+          "label": "一般",
+          "value": "護甲穿透 +10%"
+        },
+        {
+          "label": "魔法",
+          "value": "護甲穿透 +10%"
+        },
+        {
+          "label": "稀有",
+          "value": "護甲穿透 +15%"
+        }
+      ],
+      "rawText": "盾牌突擊\n編輯\n盾牌突擊\n效果\t攻擊 近距 廣域 吶喊 打擊 物理 移動\n消耗魔力\t4\n冷卻時間\t5 秒\n技能說明\t向前衝鋒對敵人造成物理傷害。\n詳細資料\n物理屬性\n最大使用次數 +2\n命中率 +10%\n影響區域 250\n物理傷害 282%\n物理傷害 +18\n護甲穿透 +10%\n共享進攻移動技能之間的冷卻時間\n一般\t護甲穿透 +10%\n攻擊命中率 +20%\n魔法\t護甲穿透 +10%\n攻擊命中率 +20%\n擊中最大射程技能時的眩暈率 +50\n打擊傷害乘數 +80%\n稀有\t護甲穿透 +15%\n攻擊命中率 +30%\n擊中最大射程技能時的眩暈率 +500\n打擊傷害乘數 +170%\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "Combo",
+    "source_key": "en:runes:Combo",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E9%80%A3%E6%93%8A",
+    "list": {
+      "url": "/zh-tw/wiki/%E9%80%A3%E6%93%8A",
+      "icon": "Icon Skill VelocitySlash 01",
+      "title": "連擊",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 1、Act 6-10",
+      "weapon": "劍、斧頭",
+      "score": "1"
+    },
+    "detail": {
+      "title": "連擊",
+      "hasNoContent": false,
+      "effectTags": [
+        "攻擊",
+        "近距",
+        "武器範圍",
+        "打擊",
+        "物理"
+      ],
+      "description": "揮動武器攻擊敵人兩次，命中時的狂亂效果會更快地造成傷害。",
+      "topRows": [
+        {
+          "label": "消耗魔力",
+          "value": "3"
+        },
+        {
+          "label": "冷卻時間",
+          "value": "立即施法"
+        },
+        {
+          "label": "一般",
+          "value": "狂暴效果 +50%"
+        },
+        {
+          "label": "魔法",
+          "value": "狂暴效果 +75%"
+        },
+        {
+          "label": "稀有",
+          "value": "狂暴效果 +100%"
+        }
+      ],
+      "detailLines": [
+        "物理屬性",
+        "武器範圍攻擊 5%",
+        "基礎速度增幅",
+        "物理傷害 115%",
+        "物理傷害 +17",
+        "擊中時獲得狂怒效果，持續 5 秒",
+        "最大堆疊數 5",
+        "每層攻擊速度 +4%",
+        "武器射程 +5",
+        "打擊傷害乘數 +15%",
+        "護甲穿透 +5%",
+        "武器射程 +25",
+        "打擊傷害乘數 +30%",
+        "護甲穿透 +10%",
+        "武器射程 +50",
+        "打擊傷害乘數 +60%",
+        "護甲穿透 +15%"
+      ],
+      "gradeRows": [
+        {
+          "label": "一般",
+          "value": "狂暴效果 +50%"
+        },
+        {
+          "label": "魔法",
+          "value": "狂暴效果 +75%"
+        },
+        {
+          "label": "稀有",
+          "value": "狂暴效果 +100%"
+        }
+      ],
+      "rawText": "連擊\n登入以儲存 儲存  編輯\n歷史\n重新整理\n討論 (0)\n連擊\n效果\t攻擊 近距 武器範圍 打擊 物理\n消耗魔力\t3\n冷卻時間\t立即施法\n技能說明\t揮動武器攻擊敵人兩次，命中時的狂亂效果會更快地造成傷害。\n詳細資料\n物理屬性\n武器範圍攻擊 5%\n基礎速度增幅\n物理傷害 115%\n物理傷害 +17\n擊中時獲得狂怒效果，持續 5 秒\n最大堆疊數 5\n每層攻擊速度 +4%\n一般\t狂暴效果 +50%\n武器射程 +5\n打擊傷害乘數 +15%\n護甲穿透 +5%\n魔法\t狂暴效果 +75%\n武器射程 +25\n打擊傷害乘數 +30%\n護甲穿透 +10%\n稀有\t狂暴效果 +100%\n武器射程 +50\n打擊傷害乘數 +60%\n護甲穿透 +15%\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "IllusionAxe",
+    "source_key": "en:runes:IllusionAxe",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E5%B9%BB%E5%BD%B1%E6%96%A7%E9%A0%AD",
+    "list": {
+      "url": "/zh-tw/wiki/%E5%B9%BB%E5%BD%B1%E6%96%A7%E9%A0%AD",
+      "icon": "Icon Skill RotateAxe 01",
+      "title": "幻影斧頭",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 2、Act 6-10",
+      "weapon": "所有武器",
+      "score": "1"
+    },
+    "detail": {
+      "title": "幻影斧頭",
+      "hasNoContent": false,
+      "effectTags": [
+        "攻擊",
+        "近距",
+        "範圍效果",
+        "打擊",
+        "物理",
+        "切換武器"
+      ],
+      "description": "召喚幻影之斧環繞施法者並對敵人造成傷害。",
+      "topRows": [
+        {
+          "label": "消耗魔力",
+          "value": "消耗資源 +20％ 增幅"
+        },
+        {
+          "label": "冷卻時間",
+          "value": "3 秒"
+        },
+        {
+          "label": "一般",
+          "value": "效果範圍 +25"
+        },
+        {
+          "label": "魔法",
+          "value": "效果範圍 +50"
+        },
+        {
+          "label": "稀有",
+          "value": "效果範圍 +100"
+        }
+      ],
+      "detailLines": [
+        "物理屬性",
+        "幻影之斧攻擊一次，持續 0.4 秒",
+        "影響區域 200",
+        "物理傷害 40%",
+        "物理傷害+8"
+      ],
+      "gradeRows": [
+        {
+          "label": "一般",
+          "value": "效果範圍 +25"
+        },
+        {
+          "label": "魔法",
+          "value": "效果範圍 +50"
+        },
+        {
+          "label": "稀有",
+          "value": "效果範圍 +100"
+        }
+      ],
+      "rawText": "幻影斧頭\n登入以儲存 儲存  編輯\n歷史\n重新整理\n討論 (0)\n幻影斧頭\n效果\t攻擊 近距 範圍效果 打擊 物理 切換武器\n消耗魔力\t消耗資源 +20％ 增幅\n冷卻時間\t3 秒\n技能說明\t召喚幻影之斧環繞施法者並對敵人造成傷害。\n詳細資料\n物理屬性\n幻影之斧攻擊一次，持續 0.4 秒\n影響區域 200\n物理傷害 40%\n物理傷害+8\n一般\t效果範圍 +25\n魔法\t效果範圍 +50\n稀有\t效果範圍 +100\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "LightningStrike",
+    "source_key": "en:runes:LightningStrike",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E9%96%83%E9%9B%BB%E6%89%93%E6%93%8A",
+    "list": {
+      "url": "/zh-tw/wiki/%E9%96%83%E9%9B%BB%E6%89%93%E6%93%8A",
+      "icon": "Icon Skill LightningHit 01",
+      "title": "閃電打擊",
+      "rarity": "一般",
+      "acquisition": "合成",
+      "chapter": "-",
+      "weapon": "斧頭、鈍器、手杖",
+      "score": "1"
+    },
+    "detail": {
+      "title": "閃電打擊",
+      "hasNoContent": false,
+      "effectTags": [
+        "攻擊",
+        "廣域",
+        "打擊",
+        "閃電",
+        "投射體"
+      ],
+      "description": "召喚施法者前方和周圍的閃電對敵人造成傷害。",
+      "topRows": [
+        {
+          "label": "消耗魔力",
+          "value": "3"
+        },
+        {
+          "label": "冷卻時間",
+          "value": "立即發動"
+        },
+        {
+          "label": "一般",
+          "value": "觸電機率 +5%"
+        },
+        {
+          "label": "魔法",
+          "value": "觸電機率 +8%"
+        },
+        {
+          "label": "稀有",
+          "value": "觸電機率 +10%"
+        }
+      ],
+      "detailLines": [
+        "閃電屬性",
+        "閃電傷害 +8（遊戲中+16）",
+        "對被電擊的敵人造成傷害 +50%",
+        "前方閃電數量 1 (+0)",
+        "前方閃電爆炸範圍 150",
+        "前方閃電造成閃電傷害 230%",
+        "周圍閃電計數 3 (+0)",
+        "周圍閃電爆炸範圍 100",
+        "周圍閃電造成閃電傷害 66%",
+        "周圍閃電觸電機率 +8%",
+        "對被觸電的敵人造成傷害 10% 增幅",
+        "對被觸電的敵人造成傷害 15% 增幅",
+        "爆炸範圍 +50",
+        "對被觸電的敵人造成傷害 30% 增幅",
+        "爆炸範圍 +50",
+        "投射體數量 +1"
+      ],
+      "gradeRows": [
+        {
+          "label": "一般",
+          "value": "觸電機率 +5%"
+        },
+        {
+          "label": "魔法",
+          "value": "觸電機率 +8%"
+        },
+        {
+          "label": "稀有",
+          "value": "觸電機率 +10%"
+        }
+      ],
+      "rawText": "閃電打擊\n登入以儲存 儲存  編輯\n歷史\n重新整理\n討論 (0)\n閃電打擊\n效果\t攻擊 廣域 打擊 閃電 投射體\n消耗魔力\t3\n冷卻時間\t立即發動\n技能說明\t召喚施法者前方和周圍的閃電對敵人造成傷害。\n詳細資料\n閃電屬性\n閃電傷害 +8（遊戲中+16）\n對被電擊的敵人造成傷害 +50%\n前方閃電數量 1 (+0)\n前方閃電爆炸範圍 150\n前方閃電造成閃電傷害 230%\n周圍閃電計數 3 (+0)\n周圍閃電爆炸範圍 100\n周圍閃電造成閃電傷害 66%\n周圍閃電觸電機率 +8%\n一般\t觸電機率 +5%\n對被觸電的敵人造成傷害 10% 增幅\n魔法\t觸電機率 +8%\n對被觸電的敵人造成傷害 15% 增幅\n爆炸範圍 +50\n稀有\t觸電機率 +10%\n對被觸電的敵人造成傷害 30% 增幅\n爆炸範圍 +50\n投射體數量 +1\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "ExplosiveSlash",
+    "source_key": "en:runes:ExplosiveSlash",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E7%88%86%E7%82%B8%E6%96%AC%E6%93%8A",
+    "list": {
+      "url": "/zh-tw/wiki/%E7%88%86%E7%82%B8%E6%96%AC%E6%93%8A",
+      "icon": "Icon Skill ExplosionSlash 01",
+      "title": "爆炸斬擊",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 5、Act 6-10",
+      "weapon": "劍、斧頭",
+      "score": "1"
+    },
+    "detail": {
+      "title": "爆炸斬擊",
+      "hasNoContent": false,
+      "effectTags": [
+        "攻擊",
+        "近距",
+        "廣域",
+        "武器範圍",
+        "打擊",
+        "火焰屬性"
+      ],
+      "description": "對目標施加弱化效果，殺死一個帶有弱化效果的敵人會引發爆炸，對附近的敵人造成傷害。",
+      "topRows": [
+        {
+          "label": "消耗魔力",
+          "value": "5"
+        },
+        {
+          "label": "冷卻時間",
+          "value": "立即發動"
+        },
+        {
+          "label": "一般",
+          "value": "效果範圍 +10%"
+        },
+        {
+          "label": "魔法",
+          "value": "效果範圍 +25%"
+        },
+        {
+          "label": "稀有",
+          "value": "效果範圍 +40%"
+        }
+      ],
+      "detailLines": [
+        "火焰屬性",
+        "基礎速度 5% 減幅",
+        "武器範圍 +20%",
+        "武器範圍攻擊",
+        "火焰傷害 +10",
+        "火焰傷害 168%",
+        "火焰爆炸範圍 280",
+        "火焰爆炸火焰傷害 227%",
+        "火爆減益疊加 3",
+        "持續時間 2 秒",
+        "每1層增加，打擊傷害增幅 50%",
+        "範圍傷害 10% 增幅",
+        "範圍傷害 15% 增幅",
+        "火焰穿透 +15%",
+        "範圍傷害 30% 增幅",
+        "火焰穿透 +30%"
+      ],
+      "gradeRows": [
+        {
+          "label": "一般",
+          "value": "效果範圍 +10%"
+        },
+        {
+          "label": "魔法",
+          "value": "效果範圍 +25%"
+        },
+        {
+          "label": "稀有",
+          "value": "效果範圍 +40%"
+        }
+      ],
+      "rawText": "爆炸斬擊\n登入以儲存 儲存  編輯\n歷史\n重新整理\n討論 (0)\n爆炸斬擊\n效果\t攻擊 近距 廣域 武器範圍 打擊 火焰屬性\n消耗魔力\t5\n冷卻時間\t立即發動\n技能說明\t對目標施加弱化效果，殺死一個帶有弱化效果的敵人會引發爆炸，對附近的敵人造成傷害。\n詳細資料\n火焰屬性\n基礎速度 5% 減幅\n武器範圍 +20%\n武器範圍攻擊\n火焰傷害 +10\n火焰傷害 168%\n火焰爆炸範圍 280\n火焰爆炸火焰傷害 227%\n火爆減益疊加 3\n持續時間 2 秒\n每1層增加，打擊傷害增幅 50%\n一般\t效果範圍 +10%\n範圍傷害 10% 增幅\n魔法\t效果範圍 +25%\n範圍傷害 15% 增幅\n火焰穿透 +15%\n稀有\t效果範圍 +40%\n範圍傷害 30% 增幅\n火焰穿透 +30%\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "EarthBlow",
+    "source_key": "en:runes:EarthBlow",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E5%9C%B0%E9%9D%A2%E5%BC%B7%E6%93%8A",
+    "list": {
+      "url": "/zh-tw/wiki/%E5%9C%B0%E9%9D%A2%E5%BC%B7%E6%93%8A",
+      "icon": "Icon Skill EarthShock 01",
+      "title": "地面強擊",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 1、Act 6-10",
+      "weapon": "斧頭、鈍器、手杖",
+      "score": "1"
+    },
+    "detail": {
+      "title": "地面強擊",
+      "hasNoContent": false,
+      "effectTags": [
+        "攻擊",
+        "近距",
+        "廣域",
+        "打擊",
+        "物理"
+      ],
+      "description": "打擊地面造成物理傷害並增加暴擊率 移動時將移除效果。",
+      "topRows": [
+        {
+          "label": "消耗魔力",
+          "value": "4"
+        },
+        {
+          "label": "冷卻時間",
+          "value": "立即發動"
+        },
+        {
+          "label": "一般",
+          "value": "腕力效果 +20%"
+        },
+        {
+          "label": "魔法",
+          "value": "腕力效果 +40%"
+        },
+        {
+          "label": "稀有",
+          "value": "腕力效果 +60%"
+        }
+      ],
+      "detailLines": [
+        "物理屬性",
+        "廣域範圍 300",
+        "物理傷害 300%",
+        "物理傷害+8",
+        "攻擊暴擊率 +120%",
+        "攻擊暴擊傷害+10%",
+        "使用技能時獲得腕力 3 秒",
+        "最大堆疊數 5",
+        "每層個疊加廣域範圍 +15",
+        "攻擊暴擊率 +20%",
+        "攻擊暴擊傷害+20%",
+        "攻擊暴擊率 +40%",
+        "攻擊暴擊傷害 +30%",
+        "傷害增幅 10%",
+        "攻擊暴擊率 +60%",
+        "攻擊暴擊傷害 +40%",
+        "傷害增幅 20%"
+      ],
+      "gradeRows": [
+        {
+          "label": "一般",
+          "value": "腕力效果 +20%"
+        },
+        {
+          "label": "魔法",
+          "value": "腕力效果 +40%"
+        },
+        {
+          "label": "稀有",
+          "value": "腕力效果 +60%"
+        }
+      ],
+      "rawText": "地面強擊\n登入以儲存 儲存  編輯\n歷史\n重新整理\n討論 (0)\n地面強擊\n效果\t攻擊 近距 廣域 打擊 物理\n消耗魔力\t4\n冷卻時間\t立即發動\n技能說明\t打擊地面造成物理傷害並增加暴擊率 移動時將移除效果。\n詳細資料\n物理屬性\n廣域範圍 300\n物理傷害 300%\n物理傷害+8\n攻擊暴擊率 +120%\n攻擊暴擊傷害+10%\n使用技能時獲得腕力 3 秒\n最大堆疊數 5\n每層個疊加廣域範圍 +15\n一般\t腕力效果 +20%\n攻擊暴擊率 +20%\n攻擊暴擊傷害+20%\n魔法\t腕力效果 +40%\n攻擊暴擊率 +40%\n攻擊暴擊傷害 +30%\n傷害增幅 10%\n稀有\t腕力效果 +60%\n攻擊暴擊率 +60%\n攻擊暴擊傷害 +40%\n傷害增幅 20%\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "LeapAttack",
+    "source_key": "en:runes:LeapAttack",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E9%A3%9B%E8%BA%8D%E6%94%BB%E6%93%8A",
+    "list": {
+      "url": "/zh-tw/wiki/%E9%A3%9B%E8%BA%8D%E6%94%BB%E6%93%8A",
+      "icon": "Icon Skill LeapAttack 01",
+      "title": "飛躍攻擊",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 2、Act 6-10",
+      "weapon": "短劍、劍、斧頭、鈍器、手杖",
+      "score": "1"
+    },
+    "detail": {
+      "title": "飛躍攻擊",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "飛躍攻擊\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "Whirlwind",
+    "source_key": "en:runes:Whirlwind",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E6%97%8B%E9%A2%A8",
+    "list": {
+      "url": "/zh-tw/wiki/%E6%97%8B%E9%A2%A8",
+      "icon": "Icon Skill Whirlwind 01",
+      "title": "旋風",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 1、Act 6-10",
+      "weapon": "短劍、劍、斧頭、鈍器、手杖",
+      "score": "1"
+    },
+    "detail": {
+      "title": "旋風",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "旋風\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "CrescentSlash",
+    "source_key": "en:runes:CrescentSlash",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E5%8D%8A%E6%9C%88%E6%96%AC%E6%93%8A",
+    "list": {
+      "url": "/zh-tw/wiki/%E5%8D%8A%E6%9C%88%E6%96%AC%E6%93%8A",
+      "icon": "Icon Skill HalfmoonSlash 01",
+      "title": "半月斬擊",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 1、Act 6-10",
+      "weapon": "劍、斧頭",
+      "score": "1"
+    },
+    "detail": {
+      "title": "半月斬擊",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "半月斬擊\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "LightningVortex",
+    "source_key": "en:runes:LightningVortex",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E9%96%83%E9%9B%BB%E6%BC%A9%E6%B8%A6",
+    "list": {
+      "url": "/zh-tw/wiki/%E9%96%83%E9%9B%BB%E6%BC%A9%E6%B8%A6",
+      "icon": "Icon Skill LightningVortex 01",
+      "title": "閃電漩渦",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 3、Act 6-10",
+      "weapon": "劍、斧頭、鈍器、手杖",
+      "score": "1"
+    },
+    "detail": {
+      "title": "閃電漩渦",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "閃電漩渦\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "IllusionHook",
+    "source_key": "en:runes:IllusionHook",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E5%B9%BB%E5%BD%B1%E9%89%A4",
+    "list": {
+      "url": "/zh-tw/wiki/%E5%B9%BB%E5%BD%B1%E9%89%A4",
+      "icon": "Icon Skill PhantomHook 01",
+      "title": "幻影鉤",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 3、Act 6-10",
+      "weapon": "所有武器",
+      "score": "1"
+    },
+    "detail": {
+      "title": "幻影鉤",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "幻影鉤\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "ShieldStrike",
+    "source_key": "en:runes:ShieldStrike",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E7%9B%BE%E7%89%8C%E6%89%93%E6%93%8A",
+    "list": {
+      "url": "/zh-tw/wiki/%E7%9B%BE%E7%89%8C%E6%89%93%E6%93%8A",
+      "icon": "Icon Skill ShieldAttack 01",
+      "title": "盾牌打擊",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 2、Act 6-10",
+      "weapon": "盾",
+      "score": "1"
+    },
+    "detail": {
+      "title": "盾牌打擊",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "盾牌打擊\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "QuickSlash",
+    "source_key": "en:runes:QuickSlash",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E8%BF%85%E9%80%9F%E6%96%AC%E6%93%8A",
+    "list": {
+      "url": "/zh-tw/wiki/%E8%BF%85%E9%80%9F%E6%96%AC%E6%93%8A",
+      "icon": "Icon Skill QuickSlash 01",
+      "title": "迅速斬擊",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 2、Act 6-10",
+      "weapon": "劍、斧頭",
+      "score": "1"
+    },
+    "detail": {
+      "title": "迅速斬擊",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "迅速斬擊\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "Fissure",
+    "source_key": "en:runes:Fissure",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E5%9C%B0%E9%9D%A2%E8%A3%82%E7%B8%AB",
+    "list": {
+      "url": "/zh-tw/wiki/%E5%9C%B0%E9%9D%A2%E8%A3%82%E7%B8%AB",
+      "icon": "Icon Skill GroundCrevice 01",
+      "title": "地面裂縫",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 2、Act 6-10",
+      "weapon": "斧頭、鈍器、手杖",
+      "score": "1"
+    },
+    "detail": {
+      "title": "地面裂縫",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "地面裂縫\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "Bloodshed",
+    "source_key": "en:runes:Bloodshed",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E8%A1%80%E6%93%8A",
+    "list": {
+      "url": "/zh-tw/wiki/%E8%A1%80%E6%93%8A",
+      "icon": "Icon Skill Rupture 01",
+      "title": "血擊",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 5、Act 6-10",
+      "weapon": "劍、斧頭",
+      "score": "1"
+    },
+    "detail": {
+      "title": "血擊",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "血擊\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "FrostStrike",
+    "source_key": "en:runes:FrostStrike",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E5%AF%92%E9%9C%9C%E5%BC%B7%E6%93%8A",
+    "list": {
+      "url": "/zh-tw/wiki/%E5%AF%92%E9%9C%9C%E5%BC%B7%E6%93%8A",
+      "icon": "Icon Skill FrostSmash 01",
+      "title": "寒霜強擊",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 2、Act 6-10",
+      "weapon": "斧頭、鈍器、手杖",
+      "score": "1"
+    },
+    "detail": {
+      "title": "寒霜強擊",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "寒霜強擊\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "FightersWrath",
+    "source_key": "en:runes:FightersWrath",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E9%AC%A5%E5%A3%AB%E7%9A%84%E6%86%A4%E6%80%92",
+    "list": {
+      "url": "/zh-tw/wiki/%E9%AC%A5%E5%A3%AB%E7%9A%84%E6%86%A4%E6%80%92",
+      "icon": "Icon Skill RunAway 01",
+      "title": "鬥士的憤怒",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 2、Act 6-10",
+      "weapon": "所有武器",
+      "score": "1"
+    },
+    "detail": {
+      "title": "鬥士的憤怒",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "鬥士的憤怒\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "BulwarkOfProtection",
+    "source_key": "en:runes:BulwarkOfProtection",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E5%AE%88%E8%AD%B7%E5%B1%8F%E9%9A%9C",
+    "list": {
+      "url": "/zh-tw/wiki/%E5%AE%88%E8%AD%B7%E5%B1%8F%E9%9A%9C",
+      "icon": "Icon Skill ProtectBarrier 01",
+      "title": "守護屏障",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 4、Act 6-10",
+      "weapon": "所有武器",
+      "score": "1"
+    },
+    "detail": {
+      "title": "守護屏障",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "守護屏障\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "ShoutOfProvocation",
+    "source_key": "en:runes:ShoutOfProvocation",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E6%8C%91%E9%87%81%E7%9A%84%E5%90%B6%E5%96%8A",
+    "list": {
+      "url": "/zh-tw/wiki/%E6%8C%91%E9%87%81%E7%9A%84%E5%90%B6%E5%96%8A",
+      "icon": "Icon Skill Frenzy 01",
+      "title": "挑釁的吶喊",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 2、Act 6-10",
+      "weapon": "所有武器",
+      "score": "1"
+    },
+    "detail": {
+      "title": "挑釁的吶喊",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "挑釁的吶喊\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "BloodExplosion",
+    "source_key": "en:runes:BloodExplosion",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E8%A1%80%E4%B9%8B%E7%88%86%E7%82%B8",
+    "list": {
+      "url": "/zh-tw/wiki/%E8%A1%80%E4%B9%8B%E7%88%86%E7%82%B8",
+      "icon": "Icon Skill BloodBurst 01",
+      "title": "血之爆炸",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 5、Act 6-10",
+      "weapon": "所有武器",
+      "score": "1"
+    },
+    "detail": {
+      "title": "血之爆炸",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "血之爆炸\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "Guardian",
+    "source_key": "en:runes:Guardian",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/Guardian",
+    "list": {
+      "url": "/zh-tw/wiki/Guardian",
+      "icon": "Icon Skill Guardian 01",
+      "title": "Guardian",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 5、Act 6-10",
+      "weapon": "盾",
+      "score": "1"
+    },
+    "detail": {
+      "title": "Guardian",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "Guardian\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "EnduringPain",
+    "source_key": "en:runes:EnduringPain",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E5%BF%8D%E5%8F%97%E7%9A%84%E7%97%9B%E8%8B%A6",
+    "list": {
+      "url": "/zh-tw/wiki/%E5%BF%8D%E5%8F%97%E7%9A%84%E7%97%9B%E8%8B%A6",
+      "icon": "Icon Skill Endure 01",
+      "title": "忍受的痛苦",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 5、Act 6-10",
+      "weapon": "所有武器",
+      "score": "1"
+    },
+    "detail": {
+      "title": "忍受的痛苦",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "忍受的痛苦\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "ElectricArea",
+    "source_key": "en:runes:ElectricArea",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/Electric_Area",
+    "list": {
+      "url": "/zh-tw/wiki/Electric_Area",
+      "icon": "Icon Skill LightningZone 01",
+      "title": "Electric Area",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 4、Act 6-10",
+      "weapon": "所有武器",
+      "score": "1"
+    },
+    "detail": {
+      "title": "Electric Area",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "Electric Area\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "WheelSlash",
+    "source_key": "en:runes:WheelSlash",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/Wheel_Slash",
+    "list": {
+      "url": "/zh-tw/wiki/Wheel_Slash",
+      "icon": "Icon Skill RotationalSlash 01",
+      "title": "Wheel Slash",
+      "rarity": "一般",
+      "acquisition": "購買、掉落",
+      "chapter": "Act 4、Act 6-10",
+      "weapon": "劍、斧頭",
+      "score": "1"
+    },
+    "detail": {
+      "title": "Wheel Slash",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "Wheel Slash\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "Sprint",
+    "source_key": "en:runes:Sprint",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/Sprint",
+    "list": {
+      "url": "/zh-tw/wiki/Sprint",
+      "icon": "Icon Skill Sprinting 01",
+      "title": "Sprint",
+      "rarity": "一般",
+      "acquisition": "合成",
+      "chapter": "-",
+      "weapon": "所有武器",
+      "score": "1"
+    },
+    "detail": {
+      "title": "Sprint",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "Sprint\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "WhirlwindSlash",
+    "source_key": "en:runes:WhirlwindSlash",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/Whirlwind_Slash",
+    "list": {
+      "url": "/zh-tw/wiki/Whirlwind_Slash",
+      "icon": "Icon Skill TornadoSlash 01",
+      "title": "Whirlwind Slash",
+      "rarity": "魔法",
+      "acquisition": "合成",
+      "chapter": "-",
+      "weapon": "劍、斧頭",
+      "score": "2"
+    },
+    "detail": {
+      "title": "Whirlwind Slash",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "Whirlwind Slash\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "TenaciousRegeneration",
+    "source_key": "en:runes:TenaciousRegeneration",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E5%A0%85%E6%AF%85%E7%9A%84%E5%BE%A9%E7%94%A6%E5%8A%9B",
+    "list": {
+      "url": "/zh-tw/wiki/%E5%A0%85%E6%AF%85%E7%9A%84%E5%BE%A9%E7%94%A6%E5%8A%9B",
+      "icon": "Icon Skill MindOfSteel 01",
+      "title": "堅毅的復甦力",
+      "rarity": "魔法",
+      "acquisition": "合成",
+      "chapter": "-",
+      "weapon": "所有武器",
+      "score": "2"
+    },
+    "detail": {
+      "title": "堅毅的復甦力",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "堅毅的復甦力\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "SealOfCondensedDestruction",
+    "source_key": "en:runes:SealOfCondensedDestruction",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E5%87%9D%E8%81%9A%E7%A0%B4%E5%A3%9E%E7%B4%8B%E7%AB%A0",
+    "list": {
+      "url": "/zh-tw/wiki/%E5%87%9D%E8%81%9A%E7%A0%B4%E5%A3%9E%E7%B4%8B%E7%AB%A0",
+      "icon": "Icon Skill AuraOfDestruction 01",
+      "title": "凝聚破壞紋章",
+      "rarity": "魔法",
+      "acquisition": "合成",
+      "chapter": "-",
+      "weapon": "所有武器",
+      "score": "2"
+    },
+    "detail": {
+      "title": "凝聚破壞紋章",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "凝聚破壞紋章\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "SealOfDefense",
+    "source_key": "en:runes:SealOfDefense",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E9%98%B2%E7%A6%A6%E7%B4%8B%E7%AB%A0",
+    "list": {
+      "url": "/zh-tw/wiki/%E9%98%B2%E7%A6%A6%E7%B4%8B%E7%AB%A0",
+      "icon": "Icon Skill AuraOfDefense 01",
+      "title": "防禦紋章",
+      "rarity": "魔法",
+      "acquisition": "合成",
+      "chapter": "-",
+      "weapon": "所有武器",
+      "score": "2"
+    },
+    "detail": {
+      "title": "防禦紋章",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "防禦紋章\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "SealOfCrowdControlDodge",
+    "source_key": "en:runes:SealOfCrowdControlDodge",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/Seal_of_Crowd_Control_Dodge",
+    "list": {
+      "url": "/zh-tw/wiki/Seal_of_Crowd_Control_Dodge",
+      "icon": "Icon Skill AddCCAbsResist",
+      "title": "Seal of Crowd Control Dodge",
+      "rarity": "魔法",
+      "acquisition": "購買",
+      "chapter": "公會商店",
+      "weapon": "所有武器",
+      "score": "？"
+    },
+    "detail": {
+      "title": "Seal of Crowd Control Dodge",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "Seal of Crowd Control Dodge\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "FireBlow",
+    "source_key": "en:runes:FireBlow",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/Fire_Blow",
+    "list": {
+      "url": "/zh-tw/wiki/Fire_Blow",
+      "icon": "Icon Skill FireBlow 01",
+      "title": "Fire Blow",
+      "rarity": "魔法",
+      "acquisition": "合成",
+      "chapter": "-",
+      "weapon": "斧頭、鈍器、手杖",
+      "score": "？"
+    },
+    "detail": {
+      "title": "Fire Blow",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "Fire Blow\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "ShoutOfJustice",
+    "source_key": "en:runes:ShoutOfJustice",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E6%AD%A3%E7%BE%A9%E7%9A%84%E5%90%B6%E5%96%8A",
+    "list": {
+      "url": "/zh-tw/wiki/%E6%AD%A3%E7%BE%A9%E7%9A%84%E5%90%B6%E5%96%8A",
+      "icon": "Icon Skill CourageCry 01",
+      "title": "正義的吶喊",
+      "rarity": "稀有",
+      "acquisition": "合成",
+      "chapter": "-",
+      "weapon": "所有武器",
+      "score": "3"
+    },
+    "detail": {
+      "title": "正義的吶喊",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "正義的吶喊\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "ShoutOfTerror",
+    "source_key": "en:runes:ShoutOfTerror",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E7%8C%9B%E7%83%88%E5%BC%B7%E6%93%8A",
+    "list": {
+      "url": "/zh-tw/wiki/%E7%8C%9B%E7%83%88%E5%BC%B7%E6%93%8A",
+      "icon": "Icon Skill BattleCry 01",
+      "title": "猛烈強擊",
+      "rarity": "稀有",
+      "acquisition": "合成",
+      "chapter": "-",
+      "weapon": "斧頭、鈍器、手杖",
+      "score": "3"
+    },
+    "detail": {
+      "title": "猛烈強擊",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "猛烈強擊\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "FireStorm",
+    "source_key": "en:runes:FireStorm",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/Fire_Storm",
+    "list": {
+      "url": "/zh-tw/wiki/Fire_Storm",
+      "icon": "Icon Skill FireStorm 01",
+      "title": "Fire Storm",
+      "rarity": "稀有",
+      "acquisition": "合成",
+      "chapter": "-",
+      "weapon": "劍、斧頭、鈍器、手杖",
+      "score": "3"
+    },
+    "detail": {
+      "title": "Fire Storm",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "Fire Storm\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "SealOfPhysicalDomain",
+    "source_key": "en:runes:SealOfPhysicalDomain",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E7%89%A9%E7%90%86%E9%A0%98%E5%9F%9F%E7%B4%8B%E7%AB%A0",
+    "list": {
+      "url": "/zh-tw/wiki/%E7%89%A9%E7%90%86%E9%A0%98%E5%9F%9F%E7%B4%8B%E7%AB%A0",
+      "icon": "Icon Skill AuraOfReleasePhyDmg 01",
+      "title": "物理領域紋章",
+      "rarity": "稀有",
+      "acquisition": "購買",
+      "chapter": "公會商店",
+      "weapon": "所有武器",
+      "score": "3"
+    },
+    "detail": {
+      "title": "物理領域紋章",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "物理領域紋章\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  },
+  {
+    "slug": "SealOfStriking",
+    "source_key": "en:runes:SealOfStriking",
+    "url": "https://undecember.fandom.com/zh-tw/wiki/%E6%89%93%E6%93%8A%E7%B4%8B%E7%AB%A0",
+    "list": {
+      "url": "/zh-tw/wiki/%E6%89%93%E6%93%8A%E7%B4%8B%E7%AB%A0",
+      "icon": "Icon Skill AuraOfHit 01",
+      "title": "打擊紋章",
+      "rarity": "稀有",
+      "acquisition": "合成",
+      "chapter": "-",
+      "weapon": "所有武器",
+      "score": "3"
+    },
+    "detail": {
+      "title": "打擊紋章",
+      "hasNoContent": true,
+      "effectTags": [],
+      "description": "",
+      "topRows": [],
+      "detailLines": [],
+      "gradeRows": [],
+      "rawText": "打擊紋章\n此頁面目前沒有內容， 您可以在其他頁面中搜尋此頁面標題，或搜尋相關日誌，但您沒有權限建立此頁面。\n除非另有註明，否則社區內容均使用CC-BY-SA授權條款。"
+    }
+  }
+]

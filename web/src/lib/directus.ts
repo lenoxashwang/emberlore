@@ -1,11 +1,15 @@
 const directusUrl = process.env.NEXT_PUBLIC_DIRECTUS_URL || 'http://127.0.0.1:8055';
+const directusInternalUrl = process.env.DIRECTUS_INTERNAL_URL || directusUrl;
 const staticToken = process.env.DIRECTUS_STATIC_TOKEN;
 const adminEmail = process.env.DIRECTUS_ADMIN_EMAIL;
 const adminPassword = process.env.DIRECTUS_ADMIN_PASSWORD;
+const directusAssetProxyPrefix = '/directus-assets';
+const directusFileIdPattern =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 let cachedAccessToken: { token: string; expiresAt: number } | null = null;
 
 function buildUrl(pathname: string, query?: Record<string, string>) {
-  const url = new URL(pathname, directusUrl);
+  const url = new URL(pathname, directusInternalUrl);
 
   if (query) {
     for (const [key, value] of Object.entries(query)) {
@@ -57,7 +61,11 @@ async function getAdminAccessToken() {
   return token;
 }
 
-async function getAuthHeaders() {
+export function getDirectusInternalUrl() {
+  return directusInternalUrl;
+}
+
+export async function getDirectusAuthHeaders() {
   if (staticToken) {
     return { Authorization: `Bearer ${staticToken}` };
   }
@@ -68,7 +76,7 @@ async function getAuthHeaders() {
 
 export async function directusFetch<T>(pathname: string, query?: Record<string, string>) {
   const response = await fetch(buildUrl(pathname, query), {
-    headers: await getAuthHeaders(),
+    headers: await getDirectusAuthHeaders(),
     cache: 'no-store',
   });
 
@@ -84,12 +92,31 @@ export function directusAsset(url: string) {
     return '';
   }
 
-  if (url.startsWith('/image/') || url.startsWith('/fonts/')) {
+  if (
+    url.startsWith('/image/') ||
+    url.startsWith('/fonts/') ||
+    url.startsWith(directusAssetProxyPrefix)
+  ) {
     return url;
   }
 
+  if (directusFileIdPattern.test(url)) {
+    return `${directusAssetProxyPrefix}/${url}`;
+  }
+
   try {
-    return new URL(url, directusUrl).toString();
+    const directusOrigin = new URL(directusUrl).origin;
+    const resolved = new URL(url, directusUrl);
+
+    if (resolved.pathname.startsWith('/assets/')) {
+      return `${directusAssetProxyPrefix}${resolved.pathname.replace(/^\/assets/, '')}${resolved.search}`;
+    }
+
+    if (resolved.origin === directusOrigin) {
+      return resolved.toString();
+    }
+
+    return url;
   } catch {
     return url;
   }

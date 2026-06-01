@@ -1,7 +1,7 @@
 {
   "project": "undecember-cms",
   "strategy": {
-    "data_model": "normalized-with-source-keys",
+    "data_model": "base-records-with-translation-tables",
     "manual_entry": true,
     "bulk_import": true,
     "frontend_mode": "next-app-router-consuming-directus-rest"
@@ -20,8 +20,18 @@
       ]
     },
     {
+      "name": "maintenance_guide",
+      "singleton": true,
+      "note": "Admin-facing content maintenance guide for editors.",
+      "fields": [
+        { "name": "title", "type": "string", "required": true },
+        { "name": "summary", "type": "text" },
+        { "name": "content", "type": "text" }
+      ]
+    },
+    {
       "name": "navigation_links",
-      "note": "Left menu and top-level navigation links.",
+      "note": "Base navigation links.",
       "fields": [
         { "name": "source_key", "type": "string", "required": true, "unique": true },
         { "name": "locale", "type": "string", "required": true, "default": "en" },
@@ -30,6 +40,16 @@
         { "name": "href", "type": "string", "required": true },
         { "name": "open_in_new_tab", "type": "boolean", "default": false },
         { "name": "sort_order", "type": "integer", "default": 1 }
+      ]
+    },
+    {
+      "name": "navigation_links_translations",
+      "note": "Localized navigation labels.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "base_source_key", "type": "string", "required": true },
+        { "name": "locale", "type": "string", "required": true },
+        { "name": "label", "type": "string", "required": true }
       ]
     },
     {
@@ -46,6 +66,16 @@
       ]
     },
     {
+      "name": "download_links_translations",
+      "note": "Localized download link labels.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "base_source_key", "type": "string", "required": true },
+        { "name": "locale", "type": "string", "required": true },
+        { "name": "label", "type": "string", "required": true }
+      ]
+    },
+    {
       "name": "home_slides",
       "note": "Homepage hero slider cards.",
       "fields": [
@@ -57,6 +87,17 @@
         { "name": "background_css", "type": "text" },
         { "name": "href", "type": "string", "required": true },
         { "name": "sort_order", "type": "integer", "default": 1 }
+      ]
+    },
+    {
+      "name": "home_slides_translations",
+      "note": "Localized home slide text.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "base_source_key", "type": "string", "required": true },
+        { "name": "locale", "type": "string", "required": true },
+        { "name": "title", "type": "string", "required": true },
+        { "name": "subtitle", "type": "text" }
       ]
     },
     {
@@ -75,6 +116,17 @@
       ]
     },
     {
+      "name": "home_featured_cards_translations",
+      "note": "Localized card text.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "base_source_key", "type": "string", "required": true },
+        { "name": "locale", "type": "string", "required": true },
+        { "name": "title", "type": "string", "required": true },
+        { "name": "subtitle", "type": "text" }
+      ]
+    },
+    {
       "name": "content_sections",
       "note": "Top-level content groups like runes, essences, materials and coins.",
       "fields": [
@@ -90,6 +142,17 @@
         { "name": "status", "type": "string", "default": "published" },
         { "name": "source_path", "type": "string" },
         { "name": "source_url", "type": "string" }
+      ]
+    },
+    {
+      "name": "content_sections_translations",
+      "note": "Localized section text.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "base_source_key", "type": "string", "required": true },
+        { "name": "locale", "type": "string", "required": true },
+        { "name": "title", "type": "string", "required": true },
+        { "name": "description", "type": "text" }
       ]
     },
     {
@@ -120,6 +183,48 @@
       ]
     },
     {
+      "name": "content_entries_translations",
+      "note": "Localized entry text.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "base_source_key", "type": "string", "required": true },
+        { "name": "locale", "type": "string", "required": true },
+        { "name": "title", "type": "string", "required": true },
+        { "name": "subtitle", "type": "text" },
+        { "name": "description", "type": "text" },
+        { "name": "list_stat", "type": "string" },
+        { "name": "list_props", "type": "text" },
+        { "name": "rarity", "type": "string" },
+        { "name": "acquisition_method", "type": "string" },
+        { "name": "weapon_requirement", "type": "string" },
+        { "name": "seo_title", "type": "string" },
+        { "name": "seo_description", "type": "text" }
+      ]
+    },
+    {
+      "name": "terminology_entries",
+      "note": "Centralized fixed terminology base records for reusable UI and content labels.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "locale", "type": "string", "required": true, "default": "en" },
+        { "name": "term_key", "type": "string", "required": true, "unique": true },
+        { "name": "group_name", "type": "string" },
+        { "name": "base_value", "type": "string", "required": true },
+        { "name": "note", "type": "text" },
+        { "name": "sort_order", "type": "integer", "default": 1 }
+      ]
+    },
+    {
+      "name": "terminology_entries_translations",
+      "note": "Localized terminology values for fixed reusable labels.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "base_source_key", "type": "string", "required": true },
+        { "name": "locale", "type": "string", "required": true },
+        { "name": "value", "type": "string", "required": true }
+      ]
+    },
+    {
       "name": "entry_tags",
       "note": "Tag badges rendered on detail pages.",
       "fields": [
@@ -127,6 +232,16 @@
         { "name": "entry_source_key", "type": "string", "required": true },
         { "name": "label", "type": "string", "required": true },
         { "name": "sort_order", "type": "integer", "default": 1 }
+      ]
+    },
+    {
+      "name": "entry_tags_translations",
+      "note": "Localized tag labels.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "base_source_key", "type": "string", "required": true },
+        { "name": "locale", "type": "string", "required": true },
+        { "name": "label", "type": "string", "required": true }
       ]
     },
     {
@@ -141,6 +256,17 @@
       ]
     },
     {
+      "name": "entry_properties_translations",
+      "note": "Localized property label and value pairs.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "base_source_key", "type": "string", "required": true },
+        { "name": "locale", "type": "string", "required": true },
+        { "name": "label", "type": "string", "required": true },
+        { "name": "value", "type": "text", "required": true }
+      ]
+    },
+    {
       "name": "entry_stat_blocks",
       "note": "Blocks like Rune Level 1 / Rune Level 45 / Rune Grade.",
       "fields": [
@@ -152,6 +278,16 @@
       ]
     },
     {
+      "name": "entry_stat_blocks_translations",
+      "note": "Localized stat block headings.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "base_source_key", "type": "string", "required": true },
+        { "name": "locale", "type": "string", "required": true },
+        { "name": "title", "type": "string", "required": true }
+      ]
+    },
+    {
       "name": "entry_stat_lines",
       "note": "Individual lines inside each stat block.",
       "fields": [
@@ -159,6 +295,16 @@
         { "name": "block_source_key", "type": "string", "required": true },
         { "name": "content", "type": "text", "required": true },
         { "name": "sort_order", "type": "integer", "default": 1 }
+      ]
+    },
+    {
+      "name": "entry_stat_lines_translations",
+      "note": "Localized stat line text.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "base_source_key", "type": "string", "required": true },
+        { "name": "locale", "type": "string", "required": true },
+        { "name": "content", "type": "text", "required": true }
       ]
     },
     {
@@ -173,6 +319,16 @@
       ]
     },
     {
+      "name": "entry_awakening_groups_translations",
+      "note": "Localized awakening group titles.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "base_source_key", "type": "string", "required": true },
+        { "name": "locale", "type": "string", "required": true },
+        { "name": "title", "type": "string", "required": true }
+      ]
+    },
+    {
       "name": "entry_awakening_lines",
       "note": "Individual lines inside each awakening group.",
       "fields": [
@@ -180,6 +336,16 @@
         { "name": "awakening_source_key", "type": "string", "required": true },
         { "name": "content", "type": "text", "required": true },
         { "name": "sort_order", "type": "integer", "default": 1 }
+      ]
+    },
+    {
+      "name": "entry_awakening_lines_translations",
+      "note": "Localized awakening line text.",
+      "fields": [
+        { "name": "source_key", "type": "string", "required": true, "unique": true },
+        { "name": "base_source_key", "type": "string", "required": true },
+        { "name": "locale", "type": "string", "required": true },
+        { "name": "content", "type": "text", "required": true }
       ]
     }
   ]

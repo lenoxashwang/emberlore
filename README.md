@@ -54,7 +54,15 @@ DIRECTUS_STATIC_TOKEN=your-admin-token \
 node directus/seed/import-to-directus.mjs
 ```
 
-5. 启动前端
+5. 同步固定术语词库到 Directus
+
+```bash
+DIRECTUS_URL=http://127.0.0.1:8055 \
+DIRECTUS_STATIC_TOKEN=your-admin-token \
+node directus/seed/sync-terminology-from-fallback.mjs
+```
+
+6. 启动前端
 
 ```bash
 cd web
@@ -73,6 +81,7 @@ http://127.0.0.1:3000/en
 
 - 内容数据保存在 Directus 数据库中。
 - 首次初始化使用 `directus/seed/generated/reference-seed.json`。
+- 固定术语保存在 `terminology_entries` / `terminology_entries_translations`，前端会优先读取 Directus 里的术语，代码词库只做兜底。
 - 图片资源保存在 `web/public/image/`，例如 `/image/runes/Skill/Icon_Skill_BattleCry_01.png`。
 - 运行时不需要从 `https://undecember.thein.ru` 读取图片或页面数据。
 
